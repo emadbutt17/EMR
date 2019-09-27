@@ -1,0 +1,67 @@
+div.rectangle {
+	  width: 100vw;
+	  height: 100px;
+/*	background-image: linear-gradient(to bottom right, #073763ff, #FF4500);*/
+    background-color: #073763ff;
+    color: white;
+	  font-size: 80px;
+}
+body {
+	  font-family: "Helvetica","helvetica",sans-serif;
+	  text-align: center;
+     margin: 0px;
+    padding: 0px;
+}
+form {
+    display: inline-block;
+    margin: 75px 20px;
+    font-size: 30px;
+    font-weight: bold;
+	
+}
+p {
+    font-family: "Helvetica", "helvetica", sans-serif;
+    text-align: left;
+    font-size: 25px;
+}
+input[type=text] {
+	background: #e6e6e6;
+	border-radius: 10px;
+	width: 250px;
+    height: 30px;
+	padding: 5px 5px;
+    font-size: 25px;
+    right: 50%;
+    margin-right: 10px;
+    margin-top: 25px;
+}	
+input[type=submit] {
+    white-space: normal;
+    width: 350px;
+    height: 120px;
+    font-size: 50px;
+    border-radius: 10px;
+    
+}
+h {
+	 color: white;
+	 font-size: 80px;
+}
+h2 {
+	color: black;
+	text-align: center;
+	font-size: 45px;
+}
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+}

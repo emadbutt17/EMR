@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/CeS_stylesheet.css">
+    <title>Pantalla de Inicio</title>
+</head>
+
+<body>
+    <p>
+    <img src="../../resources/CeS_Logo.png" alt="CeS Logo" width="900" height="202">
+    </p>
+    <p>
+        <form action=Registration.html target="_blank">
+            <input onclick="xhr()" type="image" src="../../resources/newpatientlogo.png" alt="New Patient" width="307" height="155" />
+        </form>
+        <form action=CeS_ExistingPatient.html target="_blank">
+            <input type="image" src="../../resources/existingpatientlogo.png" alt="Existing Patient" width="363"
+                height="157" />
+        </form>
+        <form action=CeS_Administration.html target="_blank">
+            <input type="image" src="../../resources/administrationlogo.png" alt="Administration" width="294"
+                height="153" />
+        </form>
+    </p>
+
+</body>
+
+</html>
+
+<script>
+
+    function xhr() {
+        let req = new XMLHttpRequest();
+        req.open("GET", "http://localhost:3000/");
+        req.send();
+        console.log('');
+    }
+
+</script>

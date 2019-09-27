@@ -1,0 +1,22 @@
+{
+  "name": "epics-emr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "pouchdb-browser": "^7.1.1",
+    "webpack-cli": "^3.3.8",
+    "webpack": "^4.40.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack-cli --help"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.rcac.purdue.edu/harri640/EPICS-EMR.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
