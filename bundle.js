@@ -2,17 +2,26 @@
 var PouchDB = require('pouchdb-browser');
 var patientDb = new PouchDB('patients');
 
-function fn1() {
-    console.log('fn1()');
-}
-
 myButton = document.getElementById('registerButton');
 myButton.onclick = addPatient;
 
+showButton = document.getElementById('registerShowButton');
+showButton.onclick = viewPatients;
+
+function viewPatients() {
+    patientDb.allDocs({include_docs: true, descending: true}, function(err, result) {
+        if (!err) {
+            console.log(result);
+        } else {
+            console.log(err);
+        }
+    });
+}
+
 function addPatient() {
-    first = document.getElementById('firstNameRegister').innerText;
-    last = document.getElementById('surnameRegister').innerText;
-    age = document.getElementById('ageRegister').innerText;
+    first = document.getElementById('firstNameRegister').value;
+    last = document.getElementById('surnameRegister').value;
+    age = document.getElementById('ageRegister').value;
     let obj = {
         _id: new Date().toISOString(),
         name: first + ' ' + last,
@@ -21,10 +30,11 @@ function addPatient() {
     patientDb.put(obj, function callback(err,result) {
         if (!err) {
             console.log('successfully posted a patient');
+            console.log('response from PouchDB: ' + result);
         }
         else {
             console.log('error occurred');
-            console.log(result);
+            console.log(err);
         }
     });
 }
