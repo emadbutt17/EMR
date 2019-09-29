@@ -21,8 +21,9 @@ function addPatient() {
     first = document.getElementById('firstNameRegister').value;
     last = document.getElementById('surnameRegister').value;
     age = document.getElementById('ageRegister').value;
+    id = document.getElementById('CeSIDRegister').value;
     let obj = {
-        _id: new Date().toISOString(),
+        _id: id,
         name: first + ' ' + last,
         age: age
     };
@@ -37,17 +38,3 @@ function addPatient() {
         }
     });
 }
-
-function registerPatient(patient) {
-    patient._id = new Date().toISOString();
-  
-    patientDb.put(patient, function callback(err, res) {
-      if (!err) {
-        console.log('Patient Registered!');
-        console.log(res);
-      }
-      else {
-        alert(err);
-      }
-    });
-  }

@@ -22,8 +22,9 @@ function addPatient() {
     first = document.getElementById('firstNameRegister').value;
     last = document.getElementById('surnameRegister').value;
     age = document.getElementById('ageRegister').value;
+    id = document.getElementById('CeSIDRegister').value;
     let obj = {
-        _id: new Date().toISOString(),
+        _id: id,
         name: first + ' ' + last,
         age: age
     };
