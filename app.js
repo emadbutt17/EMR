@@ -21,6 +21,7 @@ function addPatient() {
     first = document.getElementById('firstNameRegister').value;
     last = document.getElementById('surnameRegister').value;
     age = document.getElementById('ageRegister').value;
+    age = document.getElementById('ageRegister').value;
     sex = document.getElementById('sexRegister').value;
     weight = document.getElementById('weightRegister').value;
     height = document.getElementById('heightRegister').value;
@@ -35,8 +36,9 @@ function addPatient() {
     indigenous = document.getElementById('indigenousRegister').checed;
     disability = document.getElementById('disabilityRegister').checked;
     
+    id = document.getElementById('CeSIDRegister').value;
     let obj = {
-        _id: new Date().toISOString(),
+        _id: id,
         name: first + ' ' + last,
         age: age,
         sex: sex,
@@ -64,17 +66,3 @@ function addPatient() {
         }
     });
 }
-
-function registerPatient(patient) {
-    patient._id = new Date().toISOString();
-  
-    patientDb.put(patient, function callback(err, res) {
-      if (!err) {
-        console.log('Patient Registered!');
-        console.log(res);
-      }
-      else {
-        alert(err);
-      }
-    });
-  }
