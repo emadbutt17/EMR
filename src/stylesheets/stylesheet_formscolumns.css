@@ -81,3 +81,31 @@ input[type=date] {
    /* margin-right: 150px;*/
     margin-left: 60px;
 }
+
+#search_bar {
+    transform: translate(-50%, 0%);
+    margin: 70px 0px 0px 0px;
+}
+
+.search {
+    transform: translate(-50%, 0%);
+    position: absolute;
+    left: 50%;
+    margin: 0px;
+}
+
+.flex-container {
+    display: flex;
+    /* align-content: flex-start; */
+    flex-direction: column;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    background-color: rgb(192, 181, 181);
+    border-bottom: 1px solid black;
+    /* align-content: center; */
+    /* justify-content: space-around; */
+}

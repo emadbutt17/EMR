@@ -4,7 +4,7 @@ var patientDb = new PouchDB('patients');
 myButton = document.getElementById('registerButton');
 myButton.onclick = addPatient(); 
 
-showButton = document.getElementById('registerShowButton');
+var showButton = document.getElementById('registerShowButton');
 showButton.onclick = viewPatients;
 
 function viewPatients() {
