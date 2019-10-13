@@ -2,7 +2,7 @@ var PouchDB = require('pouchdb-browser');
 var patientDb = new PouchDB('patients');
 
 myButton = document.getElementById('registerButton');
-myButton.onclick = addPatient;
+myButton.onclick = addPatient(); registeredPatient();
 
 showButton = document.getElementById('registerShowButton');
 showButton.onclick = viewPatients;
@@ -65,4 +65,7 @@ function addPatient() {
             console.log(err);
         }
     });
+}
+function registeredPatient(){
+    alert("THE FUNCTION WORKS");
 }
