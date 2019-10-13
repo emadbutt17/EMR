@@ -710,78 +710,6 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],3:[function(require,module,exports){
-var PouchDB = require('pouchdb-browser');
-var patientDb = new PouchDB('patients');
-
-myButton = document.getElementById('registerButton');
-myButton.onclick = addPatient(); registeredPatient();
-
-showButton = document.getElementById('registerShowButton');
-showButton.onclick = viewPatients;
-
-function viewPatients() {
-    patientDb.allDocs({include_docs: true, descending: true}, function(err, result) {
-        if (!err) {
-            console.log(result);
-        } else {
-            console.log(err);
-        }
-    });
-}
-
-function addPatient() {
-    first = document.getElementById('firstNameRegister').value;
-    last = document.getElementById('surnameRegister').value;
-    age = document.getElementById('ageRegister').value;
-    age = document.getElementById('ageRegister').value;
-    sex = document.getElementById('sexRegister').value;
-    weight = document.getElementById('weightRegister').value;
-    height = document.getElementById('heightRegister').value;
-    dob = document.getElementById('dobRegister').value;
-    date = document.getElementById('dateRegister').value;
-    community = document.getElementById('communityRegister').value;
-    income = document.getElementById('incomeRegister').value;
-    previousClinics = document.getElementById('previousClinicsRegister').value;
-    CeSID = document.getElementById('CeSIDRegister').value;
-    migrant = document.getElementById('migrantRegister').checked;
-    spss = document.getElementById('spssRegister').checked;
-    indigenous = document.getElementById('indigenousRegister').checed;
-    disability = document.getElementById('disabilityRegister').checked;
-    
-    id = document.getElementById('CeSIDRegister').value;
-    let obj = {
-        _id: id,
-        name: first + ' ' + last,
-        age: age,
-        sex: sex,
-        weight: weight,
-        height: height,
-        dob: dob,
-        date: date,
-        community: community,
-        income: income,
-        previousClinics: previousClinics,
-        CeSID: CeSID,
-        migrant: migrant,
-        spss: spss,
-        indigenous: indigenous,
-        disability: disability
-    };
-    patientDb.put(obj, function callback(err,result) {
-        if (!err) {
-            console.log('successfully posted a patient');
-            console.log('response from PouchDB: ' + result);
-        }
-        else {
-            console.log('error occurred');
-            console.log(err);
-        }
-    });
-}
-function registeredPatient(){
-    alert("THE FUNCTION WORKS");
-}
-},{"pouchdb-browser":7}],4:[function(require,module,exports){
 'use strict';
 
 module.exports = argsArray;
@@ -801,7 +729,7 @@ function argsArray(fun) {
     }
   };
 }
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 (function (global){
 'use strict';
 var Mutation = global.MutationObserver || global.WebKitMutationObserver;
@@ -874,7 +802,7 @@ function immediate(task) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -899,7 +827,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 (function (process,global){
 'use strict';
 
@@ -11166,7 +11094,7 @@ PouchDB.plugin(IDBPouch)
 module.exports = PouchDB;
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":2,"argsarray":4,"events":1,"immediate":5,"inherits":6,"spark-md5":8,"uuid":9,"vuvuzela":14}],8:[function(require,module,exports){
+},{"_process":2,"argsarray":3,"events":1,"immediate":4,"inherits":5,"spark-md5":7,"uuid":8,"vuvuzela":13}],7:[function(require,module,exports){
 (function (factory) {
     if (typeof exports === 'object') {
         // Node/CommonJS
@@ -11919,7 +11847,7 @@ module.exports = PouchDB;
     return SparkMD5;
 }));
 
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 var v1 = require('./v1');
 var v4 = require('./v4');
 
@@ -11929,7 +11857,7 @@ uuid.v4 = v4;
 
 module.exports = uuid;
 
-},{"./v1":12,"./v4":13}],10:[function(require,module,exports){
+},{"./v1":11,"./v4":12}],9:[function(require,module,exports){
 /**
  * Convert array of 16 byte values to UUID string format of the form:
  * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -11954,7 +11882,7 @@ function bytesToUuid(buf, offset) {
 
 module.exports = bytesToUuid;
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 // Unique ID creation requires a high quality random # generator.  In the
 // browser this is a little complicated due to unknown quality of Math.random()
 // and inconsistent support for the `crypto` API.  We do the best we can via
@@ -11988,7 +11916,7 @@ if (getRandomValues) {
   };
 }
 
-},{}],12:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 var rng = require('./lib/rng');
 var bytesToUuid = require('./lib/bytesToUuid');
 
@@ -12099,7 +12027,7 @@ function v1(options, buf, offset) {
 
 module.exports = v1;
 
-},{"./lib/bytesToUuid":10,"./lib/rng":11}],13:[function(require,module,exports){
+},{"./lib/bytesToUuid":9,"./lib/rng":10}],12:[function(require,module,exports){
 var rng = require('./lib/rng');
 var bytesToUuid = require('./lib/bytesToUuid');
 
@@ -12130,7 +12058,7 @@ function v4(options, buf, offset) {
 
 module.exports = v4;
 
-},{"./lib/bytesToUuid":10,"./lib/rng":11}],14:[function(require,module,exports){
+},{"./lib/bytesToUuid":9,"./lib/rng":10}],13:[function(require,module,exports){
 'use strict';
 
 /**
@@ -12305,4 +12233,32 @@ exports.parse = function (str) {
   }
 };
 
-},{}]},{},[3]);
+},{}],14:[function(require,module,exports){
+var PouchDB = require('pouchdb-browser');
+var patientDb = new PouchDB('patients');
+
+diabetesButton = document.getElementById('asthmaButton');
+diabetesButton.onclick = addDiabetes;
+
+function addDiabetes(patient){
+    vision = document.getElementById('vision').value;
+    bloodTop = document.getElementById('bloodTop').value;
+    bloodBottom = document.getElementById('bloodBottom').value;
+    bloodSugar = document.getElementById('bloodSugar').value;
+    hemoglobin = document.getElementById('hemoglobin').value;
+    insulin = document.getElementById('insulin').value;
+    ifYes = document.getElementById('ifYes').value;
+    
+    let diabetes = {
+        vision: vision,
+        bloodTop: bloodTop,
+        bloodBottom: bloodBottom,
+        bloodSugar: bloodSugar,
+        hemoglobin: hemoglobin,
+        insulin: insulin,
+        ifYes: ifYes
+    };
+    patient.diagnoses.append(diabetes);
+    patientDb.put(patient);
+}
+},{"pouchdb-browser":6}]},{},[14]);
