@@ -1,108 +1,4 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-var PouchDB = require('pouchdb-browser');
-var patientDb = new PouchDB('patients');
-
-// Create an index on patient name so we can search for them easily
-// Does nothing if index already exists
-// patientDb.createIndex({
-//     index: {
-//         fields: ['name']
-//     }
-// }, function(err, result) {
-//     if (err) {
-//         return console.log(err);
-//     }
-
-//     // TODO: handle results
-//     console.log(result);
-// });
-
-function searchForPatientByName() {
-    let patientName = document.getElementById('searchByNameText').value;
-
-    patientDb.find({
-        selector: {name: patientName},
-        fields: ['_id', 'name'],
-        sort: ['name']
-    }, function(err, result) {
-        if (err) { console.log(err); }
-        // handle result
-        console.log('we did it: ')
-        console.log(result);
-    });
-};
-
-// var searchByNameButton = document.getElementById('searchByNameButton');
-// var searchByIdButton = document.getElementById('searchByIdButton');
-
-// searchByNameButton.onclick = searchForPatientByName;
-
-var myButton = document.getElementById('registerButton');
-myButton.onclick = addPatient;
-
-var showButton = document.getElementById('registerShowButton');
-showButton.onclick = viewPatients;
-
-function viewPatients() {
-    patientDb.allDocs({include_docs: true, descending: true}, function(err, result) {
-        if (!err) {
-            console.log(result);
-        } else {
-            console.log(err);
-        }
-    });
-}
-
-function addPatient() {
-    first = document.getElementById('firstNameRegister').value;
-    last = document.getElementById('surnameRegister').value;
-    age = document.getElementById('ageRegister').value;
-    age = document.getElementById('ageRegister').value;
-    sex = document.getElementById('sexRegister').value;
-    weight = document.getElementById('weightRegister').value;
-    height = document.getElementById('heightRegister').value;
-    dob = document.getElementById('dobRegister').value;
-    date = document.getElementById('dateRegister').value;
-    community = document.getElementById('communityRegister').value;
-    income = document.getElementById('incomeRegister').value;
-    previousClinics = document.getElementById('previousClinicsRegister').value;
-    CeSID = document.getElementById('CeSIDRegister').value;
-    migrant = document.getElementById('migrantRegister').checked;
-    spss = document.getElementById('spssRegister').checked;
-    indigenous = document.getElementById('indigenousRegister').checed;
-    disability = document.getElementById('disabilityRegister').checked;
-    
-    id = document.getElementById('CeSIDRegister').value;
-    let obj = {
-        _id: id,
-        name: first + ' ' + last,
-        age: age,
-        sex: sex,
-        weight: weight,
-        height: height,
-        dob: dob,
-        date: date,
-        community: community,
-        income: income,
-        previousClinics: previousClinics,
-        CeSID: CeSID,
-        migrant: migrant,
-        spss: spss,
-        indigenous: indigenous,
-        disability: disability
-    };
-    patientDb.put(obj, function callback(err,result) {
-        if (!err) {
-            console.log('successfully posted a patient');
-            console.log('response from PouchDB: ' + result);
-        }
-        else {
-            console.log('error occurred');
-            console.log(err);
-        }
-    });
-}
-},{"pouchdb-browser":5}],2:[function(require,module,exports){
 'use strict';
 
 module.exports = argsArray;
@@ -122,7 +18,7 @@ function argsArray(fun) {
     }
   };
 }
-},{}],3:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 (function (global){
 'use strict';
 var Mutation = global.MutationObserver || global.WebKitMutationObserver;
@@ -195,7 +91,7 @@ function immediate(task) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],4:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -220,7 +116,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 (function (process,global){
 'use strict';
 
@@ -10487,7 +10383,7 @@ PouchDB.plugin(IDBPouch)
 module.exports = PouchDB;
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":14,"argsarray":2,"events":13,"immediate":3,"inherits":4,"spark-md5":6,"uuid":7,"vuvuzela":12}],6:[function(require,module,exports){
+},{"_process":14,"argsarray":1,"events":13,"immediate":2,"inherits":3,"spark-md5":5,"uuid":6,"vuvuzela":11}],5:[function(require,module,exports){
 (function (factory) {
     if (typeof exports === 'object') {
         // Node/CommonJS
@@ -11240,7 +11136,7 @@ module.exports = PouchDB;
     return SparkMD5;
 }));
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 var v1 = require('./v1');
 var v4 = require('./v4');
 
@@ -11250,7 +11146,7 @@ uuid.v4 = v4;
 
 module.exports = uuid;
 
-},{"./v1":10,"./v4":11}],8:[function(require,module,exports){
+},{"./v1":9,"./v4":10}],7:[function(require,module,exports){
 /**
  * Convert array of 16 byte values to UUID string format of the form:
  * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -11275,7 +11171,7 @@ function bytesToUuid(buf, offset) {
 
 module.exports = bytesToUuid;
 
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 // Unique ID creation requires a high quality random # generator.  In the
 // browser this is a little complicated due to unknown quality of Math.random()
 // and inconsistent support for the `crypto` API.  We do the best we can via
@@ -11309,7 +11205,7 @@ if (getRandomValues) {
   };
 }
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 var rng = require('./lib/rng');
 var bytesToUuid = require('./lib/bytesToUuid');
 
@@ -11420,7 +11316,7 @@ function v1(options, buf, offset) {
 
 module.exports = v1;
 
-},{"./lib/bytesToUuid":8,"./lib/rng":9}],11:[function(require,module,exports){
+},{"./lib/bytesToUuid":7,"./lib/rng":8}],10:[function(require,module,exports){
 var rng = require('./lib/rng');
 var bytesToUuid = require('./lib/bytesToUuid');
 
@@ -11451,7 +11347,7 @@ function v4(options, buf, offset) {
 
 module.exports = v4;
 
-},{"./lib/bytesToUuid":8,"./lib/rng":9}],12:[function(require,module,exports){
+},{"./lib/bytesToUuid":7,"./lib/rng":8}],11:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11626,7 +11522,45 @@ exports.parse = function (str) {
   }
 };
 
-},{}],13:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
+var PouchDB = require('pouchdb-browser');
+var patientDb = new PouchDB('patients');
+
+// Create an index on patient name so we can search for them easily
+// Does nothing if index already exists
+patientDb.createIndex({
+  index: {
+      fields: ['name']
+  }
+}, function(err, result) {
+  if (err) {
+      return console.log(err);
+  }
+
+  // TODO: handle results
+  console.log(result);
+});
+
+function searchForPatientByName() {
+  let patientName = document.getElementById('searchByNameText').value;
+
+  patientDb.find({
+      selector: {name: patientName},
+      fields: ['_id', 'name'],
+      sort: ['name']
+  }, function(err, result) {
+      if (err) { console.log(err); }
+      // handle result
+      console.log('we did it: ')
+      console.log(result);
+  });
+};
+
+var searchByNameButton = document.getElementById('searchByNameButton');
+var searchByIdButton = document.getElementById('searchByIdButton');
+
+searchByNameButton.onclick = searchForPatientByName;
+},{"pouchdb-browser":4}],13:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -12337,4 +12271,4 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}]},{},[1]);
+},{}]},{},[12]);
