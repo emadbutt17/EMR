@@ -37,24 +37,25 @@
 </div>
 </h>
 <p>
-    <label for="Inhaler_Usage">Inhalador de Uso por Semana
-:</label>
-    <input type=text name="Inhaler_Usage" id="AsthmaForm" >
+    <label for="Inhaler_Usage">Inhalador de Uso por Semana:</label>
+    <input type=text name="Inhaler_Usage" id="inhalerUsage" >
      <textarea rows="20" cols="50">Notas:
     </textarea></p>
-   <p> <label for="ActivityLimitations">Limitaciones de la Actividad
-:</label>
-       <input type=text name="ActivityLimitations" id="AsthmaForm" > </p>
-    <p><label for="RescueMedicine">
-Medicina de Rescate (&Uacute;ltimas 2 Semanas):</label>
-        <input type=text name="RescueMedicine" id="AsthmaForm" ></p>
+   <p> <label for="ActivityLimitations">Limitaciones de la Actividad:</label>
+       <input type=text name="ActivityLimitations" id="activityLimit" > </p>
+    <p><label for="RescueMedicine">Medicina de Rescate (&Uacute;ltimas 2 Semanas):</label>
+        <input type=text name="RescueMedicine" id="rescueMeds" ></p>
    <p> <label for="Smoke">Fumar:</label>
-       <input type=text name="Smoke" id="AsthmaForm" ></p>
+       <input type=text name="Smoke" id="smoke" ></p>
     <p><label for="SmokingFrequency">Frecuencia de Fumar:</label>
-        <input type=text name="SomkingFrequency" id="AsthmaForm" > </p>
+        <input type=text name="SomkingFrequency" id="smokeFrequency" > </p>
     <p><label for="SmokingAmount">Cantidad de Fumar:</label>
-        <input type=text name="Smoking Amount" id="AsthmaForm" > </p>
+        <input type=text name="Smoking Amount" id="smokeAmount" > </p>
     <p2>
-    <form target="_self">
-	   <input type="submit" value="Enviar"/>
-        </p2>
+        <button id="asthmaButton">Enviar</button>
+    </p2>
+    
+    <script type="text/javascript" src="../../Diagnostics_AsthmaBundle.js"></script>
+    
+    </body>
+</html>
