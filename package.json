@@ -5,8 +5,9 @@
   "main": "app.js",
   "dependencies": {
     "pouchdb-browser": "^7.1.1",
-    "webpack-cli": "^3.3.8",
-    "webpack": "^4.40.2"
+    "pouchdb-find": "^7.1.1",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.8"
   },
   "devDependencies": {},
   "scripts": {
