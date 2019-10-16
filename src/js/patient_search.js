@@ -32,7 +32,7 @@ function getPatientsByName() {
 
     patientDb.find({
         selector: { name: patientName },
-        fields: ['_id', 'name'],
+        fields: ['_id', 'name', 'dob', 'sex', 'community'],
         sort: ['name']
     }, function (err, patients) {
         if (err) {
@@ -40,24 +40,64 @@ function getPatientsByName() {
             return null;
         }
 
-        console.log(patients);
-        console.log(patients.docs);
-
-        for (let i = 0; i < patients.docs.length; i++) {
-            console.log(patients.docs[i]);
-            // TODO: add row to table with real data
-            // let doc = patients.docs[i];
-            // let info = [doc.name, doc.id, doc.DOB, doc.sex, doc.community];
-            let rowArr = ["Dynamic", "Dynamic2", "Dynamic3", "Dynamic4", "Dynamic5"];
-
+        if (patients.docs.length === 0) {
+            return null;
         }
 
-        // make table visible now that every row is made
-        let table = document.getElementById("search-table-element");
+        let tableBody = document.getElementById('search-table-body');
+        // tableBody.innerHTML = "";
+        for (let i = 0; i < patients.docs.length; i++) {
+
+            let doc = patients.docs[i];
+            let row = document.createElement('tr');
+
+            let nameLink = document.createElement('a');
+            nameLink.setAttribute('href', './patient_page.html?id=' + doc._id);
+            nameLink.innerText = doc.name;
+
+            let idLink = document.createElement('a');
+            idLink.setAttribute('href', './patient_page.html?id=' + doc._id);
+            idLink.innerText = doc._id;
+
+            let dobLink = document.createElement('a');
+            dobLink.setAttribute('href', './patient_page.html?id=' + doc._id);
+            dobLink.innerText = doc.dob;
+
+            let sexLink = document.createElement('a');
+            sexLink.setAttribute('href', './patient_page.html?id=' + doc._id);
+            sexLink.innerText = doc.sex;
+
+            let communityLink = document.createElement('a');
+            communityLink.setAttribute('href', './patient_page.html?id=' + doc._id);
+            communityLink.innerText = doc.community;
+            
+            let nameCell = document.createElement('td');
+            let idCell = document.createElement('td');
+            let dobCell = document.createElement('td');
+            let sexCell = document.createElement('td');
+            let communityCell = document.createElement('td');
+
+            nameCell.appendChild(nameLink);
+            idCell.appendChild(idLink);
+            dobCell.appendChild(dobLink);
+            sexCell.appendChild(sexLink);
+            communityCell.appendChild(communityLink);
+
+            row.appendChild(nameCell);
+            row.appendChild(idCell);
+            row.appendChild(dobCell);
+            row.appendChild(sexCell);
+            row.appendChild(communityCell);
+
+            tableBody.appendChild(row);
+            
+        }
+
         table.style.visibility = "visible";
     });
 }
 
+var table = document.getElementById("search-table-element");
 var searchByNameButton = document.getElementById('searchByNameButton');
 var searchByIdButton = document.getElementById('searchByIdButton');
 
