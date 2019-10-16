@@ -82,6 +82,10 @@ input[type=date] {
     margin-left: 60px;
 }
 
+.full-height {
+    height: calc(100vh - 100px);
+}
+
 #search_bar {
     transform: translate(-50%, 0%);
     margin: 70px 0px 0px 0px;
@@ -98,14 +102,48 @@ input[type=date] {
     display: flex;
     /* align-content: flex-start; */
     flex-direction: column;
+    height: 100%;
+    /* align-items: stretch; */
 }
 
 .search-container {
     display: flex;
     justify-content: center;
-    height: 200px;
-    background-color: rgb(192, 181, 181);
     border-bottom: 1px solid black;
     /* align-content: center; */
     /* justify-content: space-around; */
+}
+
+#search-by-name-container {
+    height: 80%;
+}
+
+#search-by-id-container {
+    height: 20%;
+}
+
+table {
+
+}
+
+thead {
+
+}
+
+th {
+    color: #fa4251;
+    font-size: 18px;
+    /* font-family: Lato-Bold; */
+}
+
+tbody {
+    
+}
+
+tr {
+
+}
+
+td {
+
 }

@@ -14,6 +14,19 @@ patientDb.createIndex({
     }
 });
 
+function getPatientById() {
+    let patientId = document.getElementById('searchByIdText').value;
+
+    patientDb.get(patientId)
+    .then(function(doc) {
+        console.log(doc);
+        document.location.href = "./patient_page.html?id=" + patientId;
+    })
+    .catch(function(err) {
+        console.log(err);
+    });
+}
+
 function getPatientsByName() {
     let patientName = document.getElementById('searchByNameText').value;
 
@@ -21,25 +34,36 @@ function getPatientsByName() {
         selector: { name: patientName },
         fields: ['_id', 'name'],
         sort: ['name']
-    }, function (err, result) {
+    }, function (err, patients) {
         if (err) {
             console.log(err);
             return null;
         }
 
-        console.log(result);
-        return result;
+        console.log(patients);
+        console.log(patients.docs);
+
+        for (let i = 0; i < patients.docs.length; i++) {
+            console.log(patients.docs[i]);
+            // TODO: add row to table with real data
+            // let doc = patients.docs[i];
+            // let info = [doc.name, doc.id, doc.DOB, doc.sex, doc.community];
+            let rowArr = ["Dynamic", "Dynamic2", "Dynamic3", "Dynamic4", "Dynamic5"];
+
+        }
+
+        // make table visible now that every row is made
+        let table = document.getElementById("search-table-element");
+        table.style.visibility = "visible";
     });
 }
-
-function searchForPatientByName() {
-    let patients = getPatientsByName();
-    if (patients != null) {
-        // display the patients on the page and reformat all the html
-    }
-};
 
 var searchByNameButton = document.getElementById('searchByNameButton');
 var searchByIdButton = document.getElementById('searchByIdButton');
 
-searchByNameButton.onclick = searchForPatientByName;
+searchByNameButton.onclick = getPatientsByName;
+searchByIdButton.onclick = getPatientById;
+
+// TODO: Use localstorage to pass id to next page
+// TODO: or just make it a query parameter on the link ?id=038415
+// TODO: upon loading of results, create a link to each patient page
