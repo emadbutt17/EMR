@@ -13,15 +13,16 @@ patientDb.get(id)
     header.innerText = doc.name;
 })
 .catch(function(err) {
-    console.log("in here");
     console.log(err);
-    console.log("id: " + id);
 });
 
 // Button Actions
 let patientHistoryButton = document.getElementById('patient-history-button');
 patientHistoryButton.addEventListener("click", function() {
-    console.log("changing page");
-    console.log("id: " + id);
     document.location.href = "./patient_history.html?id=" + id;
+});
+
+let patientDiagnosesButton = document.getElementById('patient-diagnoses-button');
+patientDiagnosesButton.addEventListener('click', function() {
+    document.location.href = './patient_diagnoses_flex.html?id=' + id;
 });
