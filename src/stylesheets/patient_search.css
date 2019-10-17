@@ -38,19 +38,15 @@ h2 {
 
 .flex-container {
     display: flex;
-    /* align-content: flex-start; */
     flex-direction: column;
     height: 100%;
-    /* align-items: stretch; */
 }
 
 .search-container {
     display: flex;
     justify-content: flex-start;
-    border-bottom: 1px solid black;
     flex-direction: column;
     align-items: center;
-    /* justify-content: space-around; */
 }
 
 #search-by-name-container {
@@ -62,8 +58,7 @@ h2 {
 }
 
 .search-table {
-    max-height: 70%;
-    overflow-y: scroll;
+    visibility: hidden;
 }
 
 table {
@@ -71,31 +66,35 @@ table {
     box-shadow: 0 0 6px #bebebe;
     width: 70vw;
     background-color: white;
-    border: 1px solid black;
+    max-height: 70%;
 }
 
 thead {
-    box-shadow: 0 4px 6px #bebebe;
+    box-shadow: 0 1px 1px -1px #bebebe;
+    display: block;
+    z-index: 999;
+    position: relative;
 }
 
 th {
     color: #fa4251;
     font-size: 18px;
     height: 55px;
+    width: calc(70vw / 5);
     /* font-family: Lato-Bold; */
 }
 
 tbody {
     background-color: white;
-}
-
-tr {
-
+    display: block;
+    overflow-y: scroll;
+    max-height: 35vh;
 }
 
 td {
     height: 50px;
     border-top: 1.5px solid #f8f8ff;
+    width: calc(70vw / 5);
 }
 
 button {
@@ -143,4 +142,12 @@ a:active, a:visited, a:link {
     color: black;
     text-decoration: none;
 
+}
+
+tbody::-webkit-scrollbar {
+    width: 6px;
+}
+
+.small-margins {
+    margin: 10px;
 }

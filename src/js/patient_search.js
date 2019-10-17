@@ -45,7 +45,7 @@ function getPatientsByName() {
         }
 
         let tableBody = document.getElementById('search-table-body');
-        // tableBody.innerHTML = "";
+        tableBody.innerHTML = "";
         for (let i = 0; i < patients.docs.length; i++) {
 
             let doc = patients.docs[i];
@@ -100,10 +100,22 @@ function getPatientsByName() {
 var table = document.getElementById("search-table-element");
 var searchByNameButton = document.getElementById('searchByNameButton');
 var searchByIdButton = document.getElementById('searchByIdButton');
+var searchByNameInput = document.getElementById('searchByNameText');
+var searchByIdInput = document.getElementById('searchByIdText');
 
 searchByNameButton.onclick = getPatientsByName;
 searchByIdButton.onclick = getPatientById;
 
-// TODO: Use localstorage to pass id to next page
-// TODO: or just make it a query parameter on the link ?id=038415
-// TODO: upon loading of results, create a link to each patient page
+searchByNameInput.addEventListener("keyup", function(e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        searchByNameButton.click();
+    }
+});
+
+searchByIdInput.addEventListener("keyup", function(e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        searchByIdButton.click();
+    }
+});
