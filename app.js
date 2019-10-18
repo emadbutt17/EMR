@@ -21,7 +21,6 @@ function addPatient() {
     first = document.getElementById('firstNameRegister').value;
     last = document.getElementById('surnameRegister').value;
     age = document.getElementById('ageRegister').value;
-    age = document.getElementById('ageRegister').value;
     sex = document.getElementById('sexRegister').value;
     weight = document.getElementById('weightRegister').value;
     height = document.getElementById('heightRegister').value;
@@ -30,7 +29,6 @@ function addPatient() {
     community = document.getElementById('communityRegister').value;
     income = document.getElementById('incomeRegister').value;
     previousClinics = document.getElementById('previousClinicsRegister').value;
-    CeSID = document.getElementById('CeSIDRegister').value;
     migrant = document.getElementById('migrantRegister').checked;
     spss = document.getElementById('spssRegister').checked;
     indigenous = document.getElementById('indigenousRegister').checed;
