@@ -2,7 +2,7 @@ var PouchDB = require('pouchdb-browser');
 var patientDb = new PouchDB('patients');
 
 pregnancyButton = document.getElementById('pregnancyButton');
-pregnancyButton.onclick = addPregnancy();
+pregnancyButton.onclick = addPregnancy;
 
 function addPregnancy(patient){
     vision = document.getElementById('vision').value;
@@ -14,6 +14,7 @@ function addPregnancy(patient){
     ifYes = document.getElementById('ifYes').value;
     
     let pregnancy = {
+        type: 'pregnancy'
         vision: vision,
         bloodTop: bloodTop,
         bloodBottom: bloodBottom,
