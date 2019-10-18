@@ -68,5 +68,5 @@ function addPatient() {
     registeredPatient();
 }
 function registeredPatient(){
-    alert("THE FUNCTION WORKS");
+    window.location.assign("../../Abraham_Lincoln.html")
 }
