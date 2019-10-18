@@ -13,6 +13,7 @@ function addAsthma(patient){
     smokeAmount = document.getElementById('smokeAmount').value;
     
     let asthma = {
+        type: 'asthma',
         inhaler: inhaler,
         activityLimit: activityLimit,
         rescueMeds: rescueMeds,

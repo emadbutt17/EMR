@@ -2,7 +2,7 @@ var PouchDB = require('pouchdb-browser');
 var patientDb = new PouchDB('patients');
 
 myButton = document.getElementById('registerButton');
-myButton.onclick = addPatient(); 
+myButton.onclick = addPatient; 
 
 var showButton = document.getElementById('registerShowButton');
 showButton.onclick = viewPatients;
@@ -68,5 +68,5 @@ function addPatient() {
     registeredPatient();
 }
 function registeredPatient(){
-    window.location.assign("../../Abraham_Lincoln.html")
+    window.location.assign("../pages/Abraham_Lincoln.html")
 }
