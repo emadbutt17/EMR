@@ -14,6 +14,7 @@ function addDiabetes(patient){
     ifYes = document.getElementById('ifYes').value;
     
     let diabetes = {
+        type: 'diabetes',
         vision: vision,
         bloodTop: bloodTop,
         bloodBottom: bloodBottom,
