@@ -63,10 +63,10 @@ function addPatient() {
         else {
             console.log('error occurred');
             console.log(err);
-        }
+
     });
-    registeredPatient();
+    registeredPatient;
 }
 function registeredPatient(){
-    window.location.assign("../pages/Abraham_Lincoln.html")
+    document.location.("../pages/patient_page.html?id=id")
 }
