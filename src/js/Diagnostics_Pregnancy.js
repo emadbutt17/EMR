@@ -14,7 +14,7 @@ function addPregnancy(patient){
     ifYes = document.getElementById('ifYes').value;
     
     let pregnancy = {
-        type:
+        type: 'pregnancy'
         vision: vision,
         bloodTop: bloodTop,
         bloodBottom: bloodBottom,
