@@ -29,7 +29,7 @@ function getPatientById() {
 
 function getPatientsByName() {
     let patientName = document.getElementById('searchByNameText').value;
-    let searchString = RegExp(patientName, 'i');
+    let searchString = RegExp(patientName + '.*', 'i');
 
     patientDb.find({
         selector: { name: { $regex: searchString } },

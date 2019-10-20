@@ -20,7 +20,6 @@ function viewPatients() {
 function addPatient() {
     first = document.getElementById('firstNameRegister').value;
     last = document.getElementById('surnameRegister').value;
-    age = document.getElementById('ageRegister').value;
     sex = document.getElementById('sexRegister').value;
     weight = document.getElementById('weightRegister').value;
     height = document.getElementById('heightRegister').value;
@@ -38,7 +37,6 @@ function addPatient() {
     let obj = {
         _id: id,
         name: first + ' ' + last,
-        age: age,
         sex: sex,
         weight: weight,
         height: height,
@@ -47,7 +45,6 @@ function addPatient() {
         community: community,
         income: income,
         previousClinics: previousClinics,
-        CeSID: CeSID,
         migrant: migrant,
         spss: spss,
         indigenous: indigenous,
@@ -57,14 +54,11 @@ function addPatient() {
         if (!err) {
             console.log('successfully posted a patient');
             console.log('response from PouchDB: ' + result);
+            document.location.href="./patient_page.html?id=" + id;
         }
         else {
             console.log('error occurred');
             console.log(err);
-
-    });
-    registeredPatient;
-}
-function registeredPatient(){
-    document.location.("../pages/patient_page.html?id=id")
+        }
+    })
 }
