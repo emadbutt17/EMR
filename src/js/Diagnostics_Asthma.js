@@ -1,3 +1,4 @@
+const uuidv4 = require('uuid/v4');
 var PouchDB = require('pouchdb-browser');
 var patientDb = new PouchDB('patients');
 
@@ -13,6 +14,7 @@ function addAsthma(patient){
     smokeAmount = document.getElementById('smokeAmount').value;
     
     let asthma = {
+        _id: uuidv4();
         type: 'asthma',
         inhaler: inhaler,
         activityLimit: activityLimit,
