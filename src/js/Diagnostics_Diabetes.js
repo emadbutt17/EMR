@@ -1,3 +1,4 @@
+const uuidv4 = require('uuid/v4');
 var PouchDB = require('pouchdb-browser');
 var patientDb = new PouchDB('patients');
 
@@ -14,6 +15,7 @@ function addDiabetes(patient){
     ifYes = document.getElementById('ifYes').value;
     
     let diabetes = {
+        _id: uuidv4(),
         type: 'diabetes',
         vision: vision,
         bloodTop: bloodTop,
