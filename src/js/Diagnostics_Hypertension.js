@@ -1,3 +1,4 @@
+const uuidv4 = require('uuid/v4');
 var PouchDB = require('pouchdb-browser');
 var patientDb = new PouchDB('patients');
 
@@ -13,6 +14,7 @@ function addHypertension(patient) {
     bmi = document.getElementById('BMI').value;
     
     let hypertension = {
+        _id: uuidv4();
         type: 'hypertension'
         syspressure: syspressure,
         diapressure: diapressure,

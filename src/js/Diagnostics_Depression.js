@@ -1,3 +1,4 @@
+const uuidv4 = require('uuid/v4');
 var PouchDB = require('pouchdb-browser');
 var patientDb = new PouchDB('patients');
 
@@ -11,6 +12,7 @@ function addDepression(patient) {
     symptoms = document.getElementById('symptoms').value;
     
     let depression = {
+        _id: uuidv4();
         type: 'depression'
         PHQ_9: PHQ-9,
         currentMedication: currentMedication,

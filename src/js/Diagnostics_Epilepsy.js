@@ -1,3 +1,4 @@
+const uuidv4 = require('uuid/v4');
 var PouchDB = require('pouchdb-browser');
 var patientDb = new PouchDB('patients');
 
@@ -12,6 +13,7 @@ function addEpilepsy(patient) {
     episodered = document.getElementById('Episode_Reduction').value;
     
     let epilepsy = {
+        _id: uuidv4();
         type: 'epilepsy'
         episodenum: episodenum,
         seizurelen: seizurelen,
