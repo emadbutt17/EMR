@@ -6,7 +6,6 @@ let header = document.getElementById('page-header');
 
 let queryParams = document.location.search;
 const id = queryParams.substring(queryParams.indexOf("=") + 1);
-console.log("ID: " + id);
 
 patientDb.get(id)
 .then(function(doc) {

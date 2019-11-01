@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "Lato";
+    src: url("../../resources/fonts/lato-regular-webfont.woff");
+    src: url("../../resources/fonts/lato-regular-webfont.woff2") format("woff2");
+}
+
+.flex-container-nav {
+    display: flex;
+    align-items: center; /*centers vertically*/
+    background-color: white;
+    height: 70px;
+    margin: -8px;
+    border-bottom: 1px solid #F0F1F0;
+}
+
+.center-image {
+    margin-top: 12.5px;
+}
+
+.flex-item-nav {
+    font-family: sans-serif;
+    color: black;
+    font-size: 20px;
+    padding: 0px 20px;
+    align-self: stretch;
+    line-height: 70px;
+}
+
+a, a:active {
+    text-decoration: none;
+    color: black;
+}
+
+.navbutton {
+    border: 2px solid white;
+}
+
+.navbutton:hover {
+    border: 2px solid #F0F1F0;
+}
