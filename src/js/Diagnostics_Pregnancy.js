@@ -1,3 +1,4 @@
+const uuidv4 = require('uuid/v4');
 var PouchDB = require('pouchdb-browser');
 var patientDb = new PouchDB('patients');
 
@@ -5,23 +6,23 @@ pregnancyButton = document.getElementById('pregnancyButton');
 pregnancyButton.onclick = addPregnancy;
 
 function addPregnancy(patient){
-    vision = document.getElementById('vision').value;
-    bloodTop = document.getElementById('bloodTop').value;
-    bloodBottom = document.getElementById('bloodBottom').value;
-    bloodSugar = document.getElementById('bloodSugar').value;
-    hemoglobin = document.getElementById('hemoglobin').value;
-    insulin = document.getElementById('insulin').value;
-    ifYes = document.getElementById('ifYes').value;
+    weight = document.getElementById('Weight').value;
+    syspressure = document.getElementById('SystolicPressure').value;
+    diapressure = document.getElementById('DiastolicPressure').value;
+    glucose = document.getElementById('Glucose').value;
+    hemoglobin = document.getElementById('Hemoglobin').value;
+    urtest = document.getElementById('UrineTest').value;
+    
     
     let pregnancy = {
+        _id: uuidv4();
         type: 'pregnancy'
-        vision: vision,
-        bloodTop: bloodTop,
-        bloodBottom: bloodBottom,
-        bloodSugar: bloodSugar,
+        weight: weight,
+        syspressure: syspressure,
+        diapressure: diapressure,
+        glucose: glucose,
         hemoglobin: hemoglobin,
-        insulin: insulin,
-        ifYes: ifYes
+        urtest: urtest,
     };
     patient.diagnoses.append(pregnancy);
     patientDb.put(patient);

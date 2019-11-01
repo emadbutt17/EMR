@@ -1,66 +1,70 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet_diseasecheck.css">
-    <meta charset="utf-8">
-    <title>Diagnósticos</title>
+<link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
+<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet_diseasecheck.css">
+<meta charset="utf-8">
+<title>Diagnósticos</title>
 </head>
 
 <body>
-    <h>
-        <div class="rectangle">Diagnósticos</div>
-        <div class="buttonrow">
-            <form id="Registrationform" action="Diagnostics_Notes.html">
-                <input type="submit" value="Notas">
-            </form>
-            <form id="Registrationform" action="../pages/diagnostics_asthma.html">
-                <input type="submit" value="Asma">
-            </form>
-            <form id="Registrationform" action="../pages/diagnostics_depression.html">
-                <input type="submit" value="Depresión" style="background-color:white;box-shadow: 1px 4px 7px grey;">
-            </form>
-            <form id="Registrationform" action="../pages/Diagnostics_Diabetes.html">
-                <input type="submit" value="Diabetes">
-            </form>
-            <form id="Registrationform" action="../pages/Diagnostics_Pregnancy.html">
-                <input type="submit" value="Embarazada">
-            </form>
-            <form id="Registrationform" action="../pages/Diagnostics_Epilepsy.html">
-                <input type="submit" value="Epilepsia">
-            </form>
-            <form id="Registrationform" action="../pages/Diagnostics_Hypertension.html">
-                <input type="submit" value="Hipertensión">
-            </form>
-            <form id="Registrationform" action="../pages/Diagnostics_Others.html">
-                <input type="submit" value="Otro">
-            </form>
-        </div>
-    </h>
+<h>
+<div class="rectangle">Diagnósticos</div>
+<div class="buttonrow">
+    <form id="Registrationform" action="Diagnostics_Notes.html">
+        <input type="submit" value="Notas">
+    </form>
+    <form id="Registrationform" action="../pages/diagnostics_asthma.html">
+        <input type="submit" value="Asma">
+    </form>
+    <form id="Registrationform" action="../pages/diagnostics_depression.html">
+        <input type="submit" value="Depresión" style="background-color:white;box-shadow: 1px 4px 7px grey;font-size: 24px;">
+    </form>
+    <form id="Registrationform" action="../pages/Diagnostics_Diabetes.html">
+        <input type="submit" value="Diabetes">
+    </form>
+    <form id="Registrationform" action="../pages/Diagnostics_Pregnancy.html">
+        <input type="submit" value="Embarazada">
+    </form>
+    <form id="Registrationform" action="../pages/Diagnostics_Epilepsy.html">
+        <input type="submit" value="Epilepsia">
+    </form>
+    <form id="Registrationform" action="../pages/Diagnostics_Hypertension.html">
+        <input type="submit" value="Hipertensión">
+    </form>
+    <form id="Registrationform" action="../pages/Diagnostics_Others.html">
+        <input type="submit" value="Otro">
+    </form>
+</div>
+</h>
     <div class="wrapper">
         <div class="columnWrapper">
             <div>
                 <label for="PHQ-9">PHQ-9:</label>
                 <input class="diseaseInput" type=text id="PHQ-9">
+                <textarea rows="20" cols="50">Notas:  
+                </textarea>
+                
             </div>
             <div>
-                <label for="currentMedication">Current Medication:</label>
+                <label for="currentMedication">Medicación actual:</label>
                 <input class="diseaseInput" type=text id="currentMedication">
             </div>
 
             <div>
-                <label for="sideEffects">Antidepressant Side Effects:</label>
+                <label for="sideEffects">Efectos secundarios antidepresivos:</label>
                 <input class="diseaseInput" type=text id="sideEffects">
             </div>
             <div>
-                <label for="symptoms">Symptoms:</label>
+                <label for="symptoms">síntomas:</label>
                 <input class="diseaseInput" type=text id="symptoms">
             </div>
         </div>
-        <div class="right">
-            <h3>Notas:</h3>
-            <textarea class="notes" rows="20" cols="50"></textarea>
-        </div>
     </div>
-</body>
+    <p>
+        <button id="depressionButton">Enviar</button>
+    </p>
+        
+    <script type="text/javascript" src="../../Diagnostics_Depressionbundle.js"></script>
+    </body>
+</html>

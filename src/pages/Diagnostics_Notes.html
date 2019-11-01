@@ -11,7 +11,7 @@
 <div class="rectangle">Diagnósticos</div>
 <div class="buttonrow">
     <form id="Registrationform" action="../pages/Diagnostics_Notes.html">
-        <input type="submit" value="Notas" style="background-color:white;box-shadow: 1px 4px 7px grey;">
+        <input type="submit" value="Notas" style="background-color:white;box-shadow: 1px 4px 7px grey;font-size: 24px;">
     </form>
     <form id="Registrationform" action="../pages/diagnostics_asthma.html">
         <input type="submit" value="Asma">
@@ -36,16 +36,60 @@
     </form>
 </div>
 </h>
+<p><textarea rows="20" cols="50">Notas: </textarea></p>
 <p>
 <label for="Surname">Nuevo Diagnóstico:</label>
        <input type=text name="NewDiagnosis" id="NewDiagnosis" > 
-    <input type="image" src="../../resources/SubmitCross.PNG" alt="Submit" width="30" height="30" >
-    <textarea rows="20" cols="50">Notas:
-    </textarea>
+    <input type="image" src="../../resources/SubmitCross.PNG" alt="Submit" width="30" height="30" style="position: relative;right: 125px" >
 </p>
-<p2>
-<div class="table1">
+    
+<div style="width: 55%">
 <table>
+    <caption>Diagnósticos Actuales:</caption>
+    <tr>
+        <th style="width: 40%">Fecha de Diagn&oacute;stico</th>
+        <th style="width: 30%">Diagn&oacute;stico</th>
+        <th style="width: 30%">Notas</th>
+    </tr>
+    <tr>
+        <td style="width: 40%">10/10/2007</td>
+        <td style="width: 30%">Epilepsia</td>
+        <td style="width: 30%">Había experimentado síntomas durante semanas, pero parece menor.</td>
+    </tr>
+    <tr>
+        <td style="width: 40%">04/10/2017</td>
+        <td style="width: 30%">Embarazada</td>
+        <td style="width: 30%">No tengo idea de cómo sucedió esto.</td>
+    </tr>
+    
+    
+</table>
+</div>
+<br><br>
+<div style="width: 55%">
+<table>
+    <caption>Chequeos Anteriores:</caption>
+    <tr>
+        <th style="width: 50%">Fecha</th>
+        <th style="width: 50%">Notas</th>
+    </tr>
+    <tr>
+        <td style="width: 50%">10/10/2007</td>
+        <td style="width: 50%">Experimentar convulsiones leves en la exposición a la luz.</td>
+    </tr>
+    <tr>
+        <td style="width: 50%">04/10/2017</td>
+        <td style="width: 50%">Le he diagnosticado un embarazo. Es un milagro de la naturaleza.</td>
+    </tr>
+    
+    
+</table>
+</div>
+
+
+<!--<p2>
+<div class="table1">
+<br><table>
     <caption>Diagnósticos Actuales:</caption>
     <tr>
     <th>Fecha de Diagn&oacute;stico</th>
@@ -61,10 +105,12 @@
         <th>04/10/2017</th>
         <th>Embarazada</th>
         <th>No tengo idea de cómo sucedió esto.</th></tr>
+    
+  <input style="width: auto" > 
 </table>   
-    </div>
+</div>
 </p2>
-    <p3>
+<p3>
 <div class="table2">
 <table>
     <caption>Chequeos Anteriores:</caption>
@@ -79,14 +125,17 @@
     <tr>
         <th>04/10/2017</th>
         <th>Le he diagnosticado un embarazo. Es un milagro de la naturaleza.</th>
+        
 </table>   
-    </div>
-</p3>
+</div>
+</p3>-->
 <!--<p4>
    <textarea rows="20" cols="50">Notes:
     </textarea>
            </p4>-->
-<p4>
+<!--<p4>
     <form target="_self">
 	   <input type="submit" value="Enviar"/>
 </p4>
+
+

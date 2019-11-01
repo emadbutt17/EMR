@@ -29,7 +29,7 @@
         <input type="submit" value="Epilepsia">
     </form>
     <form id="Registrationform" action="../pages/Diagnostics_Hypertension.html">
-        <input type="submit" value="Hipertensión" style="background-color:white;box-shadow: 1px 4px 7px grey;">
+        <input type="submit" value="Hipertensión" style="background-color:white;box-shadow: 1px 4px 7px grey;font-size: 24px;">
     </form>
     <form id="Registrationform" action="../pages/Diagnostics_Others.html">
         <input type="submit" value="Otro">
@@ -38,20 +38,23 @@
 </h>
     <p>
     <label for="Systolic_Pressure">Presión Sistólica:</label>
-    <input type=text name="Systolic_Pressure" id="HypertensionForm" >
+    <input type=text name="Systolic_Pressure" id="syspressure" >
      <textarea rows="20" cols="50">Notas:
     </textarea></p>
-   <p> <label for="Diastolic_Pressure">Presión diastólica:</label>
-       <input type=text name="Diastolic_Pressure" id="HypertensionForm" > </p>
+   <p><label for="Diastolic_Pressure">Presión diastólica:</label>
+       <input type=text name="Diastolic_Pressure" id="diapressure" > </p>
     <p><label for="Smoking/Alcohol">Fumar/Alcohol:</label>
-        <input type=text name="Smoking/Alcohol" id="HypertensionForm" ></p>
-   <p> <label for="Height">Altura:</label>
-       <input type=text name="Height" id="HypertensionForm" ></p>
+        <input type=text name="Smoking/Alcohol" id="smokingalcohol" ></p>
+   <p><label for="Height">Altura:</label>
+       <input type=text name="Height" id="height" ></p>
     <p><label for="Weight">Peso:</label>
-        <input type=text name="Weight" id="HypertensionForm" > </p>
+        <input type=text name="Weight" id="weight" > </p>
     <p><label for="BMI">BMI:</label>
-        <input type=text name="BMI" id="HypertensionForm" > </p>
+        <input type=text name="BMI" id="bmi" >
     <p2>
-    <form target="_self">
-	   <input type="submit" value="Enviar"/>
-        </p2>
+        <br><br><button id="hypertensionButton">Enviar</button>
+    </p2>
+    </p>
+        <script type="text/javascript" src="../../Diagnostics_Hypertensionbundle.js"></script>
+ </body>
+</html>
