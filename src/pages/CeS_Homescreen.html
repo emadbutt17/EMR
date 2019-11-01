@@ -4,14 +4,22 @@
 <head>
     <link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
     <link rel="stylesheet" type="text/css" href="../stylesheets/CeS_stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/navbar.css">
     <title>Pantalla de Inicio</title>
 </head>
 
 <body>
     <p>
-    <img src="../../resources/CeS_Logo.png" alt="CeS Logo" width="900" height="202">
-    </p>
-    <p>
+            <div class="flex-container-nav">
+        <div class="flex-item-nav" style="flex-grow: 2"></div>
+        <div class="flex-item-nav center-image"><a href="./CeS_Homescreen.html"><img height="45" width="45"
+                    src="../../resources/shortcuticon_Xx0_icon.ico"></a></div>
+        <div class="flex-item-nav" style="flex-grow: 12"></div>
+        <div class="flex-item-nav navbutton"><a href="./Registration.html">REGISTRAR PACIENTE</a></div>
+        <div class="flex-item-nav navbutton"><a href="./patient_search_flex.html">BUSCAR</a></div>
+        <div class="flex-item-nav navbutton"><a href="./pharmacy.html">FARMACIA</a></div>
+        <div class="flex-item-nav" style="flex-grow: 2"></div>
+    </div>
         <form action=Registration.html target="_blank">
             <input onclick="xhr()" type="image" src="../../resources/newpatientlogo.png" alt="New Patient" width="307" height="155" />
         </form>
