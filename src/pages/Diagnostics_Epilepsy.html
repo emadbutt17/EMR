@@ -2,13 +2,22 @@
 <html>
 <head>
 <link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
-<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet_diseasecheck.css">  
+<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet_diseasecheck.css">
+<link rel="stylesheet" type="text/css" href="../stylesheets/navbar.css">
 <meta charset="utf-8">
 <title>Diagnósticos</title>
 </head>
 <body>
 <h>
-<div class="rectangle">Diagnósticos</div>
+<div class="flex-container-nav">
+        <div class="flex-item-nav center-image"><a href="./CeS_Homescreen.html"><img height="45" width="45"
+                    src="../../resources/shortcuticon_Xx0_icon.ico"></a></div>
+        <div class="flex-item-nav">Diagnósticos - Epilepsia</div>
+        <div class="flex-item-nav" style="flex-grow: 12"></div>
+        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./Registration.html">REGISTRAR PACIENTE</a></div>
+        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./patient_search_flex.html">BUSCAR</a></div>
+        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./pharmacy.html">FARMACIA</a></div> 
+    </div>
 <div class="buttonrow">
     <form id="Registrationform" action="../pages/Diagnostics_Notes.html">
         <input type="submit" value="Notas" >
@@ -50,7 +59,7 @@
     <p><label for="Episode_Reduction">Porcentaje de Reducción:</label>
         <input type=text name="Episode_Reduction" id="episodered" ></p>
     <p2>
-        <br><br><button id="epilepsyButton">Enviar</button>
+        <br><br><br><button id="epilepsyButton">Enviar</button>
     </p2>
     
     <script type="text/javascript" src="../../Diagnostics_Epilepsybundle.js"></script>
