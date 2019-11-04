@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet_formscolumns.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/registration.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/buttons.css">
     <meta charset="utf-8">
     <title>El Registro</title>
-    <!--
-<script src="//cdn.jsdelivr.net/npm/pouchdb@7.1.1/dist/pouchdb.min.js"></script>
--->
 </head>
 
 <body>
-    <h>
-        <div class="rectangle">El Registro</div>
-    </h>
+    <div class="flex-container-nav">
+        <div class="flex-item-nav" style="flex-grow: 2"></div>
+        <div class="flex-item-nav center-image"><a href="./CeS_Homescreen.html"><img height="45" width="45"
+                    src="../../resources/shortcuticon_Xx0_icon.ico"></a></div>
+        <div class="flex-item-nav" style="flex-grow: 12"></div>
+        <div class="flex-item-nav navbutton"><a href="./Registration.html">REGISTRAR PACIENTE</a></div>
+        <div class="flex-item-nav navbutton"><a href="./patient_search_flex.html">BUSCAR</a></div>
+        <div class="flex-item-nav navbutton"><a href="./pharmacy.html">FARMACIA</a></div>
+        <div class="flex-item-nav" style="flex-grow: 2"></div>
+    </div>
+
+    <div class="page-title">El Registro</div>
+
     <p>
         <label for="First_Name">Nombre:</label>
         <input type=text name="First_Name" id="firstNameRegister"></p>
@@ -47,9 +56,8 @@
     <p> <label for="Disability">Discapacidad:</label>
         <input type="checkbox" name="Disability" id="disabilityRegister"> </p>
 
-    <button id="registerButton">Registrar</button>
-    <button id="registerShowButton">Log Patients</button>
-    
+    <button class="medium-button" id="registerButton">Registrar</button>
+
     <script type="text/javascript" src="../../bundle.js"></script>
 </body>
 

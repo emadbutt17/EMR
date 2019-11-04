@@ -1,0 +1,121 @@
+body {
+    font-family: "Helvetica", "helvetica", sans-serif;
+    padding: 0px;
+}
+
+form {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 200px;
+    margin-right: auto;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type=text] {
+    background: #e6e6e6;
+    border-radius: 10px;
+    width: 400px;
+    height: 30px;
+    padding: 5px 5px;
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    margin-left: 60px;
+}
+
+input[type=number] {
+    border=4px solid #000080;
+    background: #e6e6e6;
+    border-radius: 10px;
+    width: 400px;
+    height: 30px;
+    padding: 5px 5px;
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    /* margin-right: 150px;*/
+    margin-left: 60px;
+}
+
+input[type=submit] {
+    width: 200px;
+    height: 75px;
+    font-size: 45px;
+    border-radius: 5px;
+    margin-left: 650px;
+    margin-right: auto;
+}
+
+input[type=checkbox] {
+    transform: scale(3.5);
+    margin-left: 70px;
+    margin-top: 15px;
+    position: absolute;
+    left: 50%;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+    font-size: 45px;
+}
+
+label {
+    text-align: left;
+    font-size: 40px;
+    margin-left: 200px;
+    margin-right: 100px;
+}
+
+input[type=date] {
+    border=4px solid #000080;
+    background: #e6e6e6;
+    border-radius: 10px;
+    width: 400px;
+    height: 30px;
+    padding: 5px 5px;
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    margin-left: 60px;
+}
+
+.full-height {
+    height: calc(100vh - 100px);
+}
+
+#search_bar {
+    transform: translate(-50%, 0%);
+    margin: 70px 0px 0px 0px;
+}
+
+.search {
+    transform: translate(-50%, 0%);
+    position: absolute;
+    left: 50%;
+    margin: 0px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+}
+
+#search-by-name-container {
+    height: 80%;
+}
+
+.page-title {
+    margin-left: 200px;
+    font-size: 4em;
+}

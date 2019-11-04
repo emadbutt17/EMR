@@ -30,7 +30,7 @@ function addPatient() {
     previousClinics = document.getElementById('previousClinicsRegister').value;
     migrant = document.getElementById('migrantRegister').checked;
     spss = document.getElementById('spssRegister').checked;
-    indigenous = document.getElementById('indigenousRegister').checed;
+    indigenous = document.getElementById('indigenousRegister').checked;
     disability = document.getElementById('disabilityRegister').checked;
     
     id = document.getElementById('CeSIDRegister').value;

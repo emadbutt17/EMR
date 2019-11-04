@@ -26,17 +26,17 @@ patientDiagnosesButton.addEventListener('click', function() {
     document.location.href = './patient_diagnoses_flex.html?id=' + id;
 });
 
-let patientDiagnosesButton = document.getElementById('patient-prescriptions-button');
-patientDiagnosesButton.addEventListener('click', function() {
-    document.location.href = './Prescriptions.html?id=' + id;
+let patientPrescriptionsButton = document.getElementById('patient-prescriptions-button');
+patientPrescriptionsButton.addEventListener('click', function() {
+    document.location.href = './patient_prescriptions.html?id=' + id;
 });
 
-let patientDiagnosesButton = document.getElementById('new-checkup-button');
-patientDiagnosesButton.addEventListener('click', function() {
+let patientCheckupsButton = document.getElementById('new-checkup-button');
+patientCheckupsButton.addEventListener('click', function() {
     document.location.href = './Diagnostics_Notes.html?id=' + id;
 });
 
-let patientDiagnosesButton = document.getElementById('patient-lab-results-button');
-patientDiagnosesButton.addEventListener('click', function() {
+let patientLabResultsButton = document.getElementById('patient-lab-results-button');
+patientLabResultsButton.addEventListener('click', function() {
     document.location.href = './Patient_LabResults.html?id=' + id;
 });

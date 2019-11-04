@@ -11,6 +11,9 @@
     height: 70px;
     margin: -8px;
     border-bottom: 1px solid #F0F1F0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .center-image {
