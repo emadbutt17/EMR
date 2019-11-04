@@ -1,0 +1,62 @@
+body {
+	font-family: "Helvetica","helvetica",sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #595959
+}
+form {
+    text-align: left;
+    font-size: 30px;
+    position: absolute;
+    right: 60%;
+    left:2%;
+    margin-top: 25px;
+}
+.page-title {
+    padding-left: 70px;
+    padding-top: 15px;
+    font-size: 3em;
+    color: black;
+}
+input[type=text] {
+	border= 4px;
+	background: #e6e6e6;
+    margin-left: 190px;
+    margin-top: 15px;
+    width: 75%;
+    height: 40px;
+    font-size: 25px;
+    border-radius: 10px;
+    padding-left: 15px;
+    white-space: normal;
+    overflow-y:inherit;
+}
+input[type=submit] {
+    width: 200px;
+    height: 75px;
+    font-size: 45px;
+    border-radius: 5px;
+    margin-left: 650px;
+    margin-right: auto;
+}
+input[type=checkbox] {
+    transform: scale(3.5);
+    margin-left: 90px;
+    margin-top: 15px;
+}
+label {
+    text-align: left;
+    font-size: 30px;
+    position: initial;
+    margin-left: 20px;
+}
+label[for='alarmSigns']{
+    text-align: left;
+    font-size: 30px;
+    margin-left: 130px;
+}
+label[for='cancerSigns']{
+    text-align: left;
+    font-size: 30px;
+    margin-left: 130px;
+}
