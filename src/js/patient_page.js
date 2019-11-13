@@ -35,8 +35,3 @@ let patientCheckupsButton = document.getElementById('new-checkup-button');
 patientCheckupsButton.addEventListener('click', function() {
     document.location.href = './Diagnostics_Notes.html?id=' + id;
 });
-
-let patientLabResultsButton = document.getElementById('patient-lab-results-button');
-patientLabResultsButton.addEventListener('click', function() {
-    document.location.href = './Patient_LabResults.html?id=' + id;
-});
