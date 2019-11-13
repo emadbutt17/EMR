@@ -8,6 +8,7 @@ div.rectangle {
 div.buttonrow {
     width: 100vw;
     height: 60px;
+    margin-top: 18px;
     background-color: #073763ff;
 }
 div.table1 {
