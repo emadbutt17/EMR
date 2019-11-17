@@ -1,68 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-<link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
-<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet_diseasecheck.css">
-<link rel="stylesheet" type="text/css" href="../stylesheets/navbar.css">
-<meta charset="utf-8">
-<title>Diagnósticos</title>
+    <link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet_diseasecheck.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/navbar.css">
+    <meta charset="utf-8">
+    <title>Diagnósticos</title>
 </head>
+
 <body>
-<h>
-<div class="flex-container-nav">
+
+    <div class="flex-container-nav">
         <div class="flex-item-nav center-image"><a href="./CeS_Homescreen.html"><img height="45" width="45"
                     src="../../resources/shortcuticon_Xx0_icon.ico"></a></div>
         <div class="flex-item-nav">Diagnósticos - Epilepsia</div>
         <div class="flex-item-nav" style="flex-grow: 12"></div>
-        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./Registration.html">REGISTRAR PACIENTE</a></div>
-        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./patient_search_flex.html">BUSCAR</a></div>
-        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./pharmacy.html">FARMACIA</a></div> 
+        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./Registration.html">REGISTRAR
+                PACIENTE</a></div>
+        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./patient_search_flex.html">BUSCAR</a>
+        </div>
+        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./pharmacy.html">FARMACIA</a></div>
     </div>
-<div class="buttonrow">
-    <form id="Registrationform" action="../pages/Diagnostics_Notes.html">
-        <input type="submit" value="Notas" >
-    </form>
-    <form id="Registrationform" action="../pages/diagnostics_asthma.html">
-        <input type="submit" value="Asma">
-    </form>
-    <form id="Registrationform" action="../pages/diagnostics_depression.html">
-        <input type="submit" value="Depresión">
-    </form>
-    <form id="Registrationform" action="../pages/Diagnostics_Diabetes.html">
-        <input type="submit" value="Diabetes">
-    </form>
-    <form id="Registrationform" action="../pages/Diagnostics_Pregnancy.html">
-        <input type="submit" value="Embarazada">
-    </form>
-    <form id="Registrationform" action="../pages/Diagnostics_Epilepsy.html">
-        <input type="submit" value="Epilepsia" style="background-color:white;box-shadow: 1px 4px 7px grey;">
-    </form>
-    <form id="Registrationform" action="../pages/Diagnostics_Hypertension.html">
-        <input type="submit" value="Hipertensión">
-    </form>
-    <form id="Registrationform" action="../pages/Diagnostics_Others.html">
-        <input type="submit" value="Otro">
-    </form>
-</div>
-</h>
-    <p>
+
+    <div class="page-title">Epilepsia</div>
+
+    <textarea rows="20" cols="50">Notas:</textarea>
     <label for="Episode_Number">Número de Episodios<br>(4 Semanas):</label>
-    <input type=text name="Episode_Number" id="episodenum" >
-     <textarea rows="20" cols="50">Notas:
-    </textarea></p>
+    <input type=text name="Episode_Number" id="episodenum">
     <p><label for="Seizure_Length">Longitud de Convulsión:</label>
-       <input type=text name="Seizure_Length" id="seizurelen" ></p>
+        <input type=text name="Seizure_Length" id="seizurelen"></p>
     <p><label for="Uncontrollable_Movements">Movimientos incontrolables:</label>
-        <input type=text name="Uncontrollable_Movements" id="unmovements" ></p>
+        <input type=text name="Uncontrollable_Movements" id="unmovements"></p>
     <p><label for="Episodes_Year">Episodios (Año Pasado):</label>
-       <input type=text name="Episode_Year" id="episodeyear" ></p>
+        <input type=text name="Episode_Year" id="episodeyear"></p>
     <p><label for="Episode_Reduction">Porcentaje de Reducción:</label>
-        <input type=text name="Episode_Reduction" id="episodered" ></p>
-    <p2>
-        <br><br><br><button id="epilepsyButton">Enviar</button>
-    </p2>
+        <input type=text name="Episode_Reduction" id="episodered"></p>
     
-    <script type="text/javascript" src="../../Diagnostics_Epilepsybundle.js"></script>
-    </body>
+    <br><br><br><button id="epilepsyButton">Enviar</button>
+
+    <script type="text/javascript" src="../../diagnostics_epilepsy_bundle.js"></script>
+</body>
+
 </html>
-   

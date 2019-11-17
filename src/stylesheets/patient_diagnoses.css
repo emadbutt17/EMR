@@ -9,8 +9,6 @@ div.rectangle {
 
 body {
   font-family: "Helvetica", "helvetica", sans-serif;
-  margin: 0px;
-  padding: 0px;
   background-color: #fcfcff;
 }
 
@@ -39,10 +37,10 @@ h2 {
 .flex-container {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 50%;
 }
 
-.search-container {
+.table-container {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -55,10 +53,6 @@ h2 {
 
 #search-by-id-container {
   height: 20%;
-}
-
-.search-table {
-  visibility: visible;
 }
 
 table {
@@ -81,7 +75,6 @@ th {
   font-size: 18px;
   height: 55px;
   width: calc(70vw / 3);
-  /* font-family: Lato-Bold; */
 }
 
 tbody {
@@ -97,6 +90,31 @@ td {
   width: calc(70vw / 3);
   text-align: center;
 }
+
+.wide-table-column {
+  width: calc(70vw / 3 * 2);
+  text-align: left;
+}
+
+/* #checkup-table-body td {
+  width: calc(70vw / 2);
+}
+
+#checkup-table-body tr:nth-child(1) {
+  width: calc(70vw / 3);
+}
+
+#checkup-table-body tr:nth-child(2) {
+  width: calc(70vw / 3 * 2);
+} */
+
+/* #checkup-table-body:nth-child(1) {
+  width: calc(70vw / 3);
+} */
+
+/* #checkup-table-body:nth-child(2) {
+  width: calc(70vw / 3 * 2);
+} */
 
 button {
   color: #fff;
@@ -155,4 +173,10 @@ tbody::-webkit-scrollbar {
 
 .top-pad {
   padding-top: 30px;
+}
+
+.page-header {
+  font-size: 4em;
+  text-align: left;
+  margin-left: 15vw;
 }

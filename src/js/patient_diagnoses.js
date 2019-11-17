@@ -1,35 +1,21 @@
 var PouchDB = require('pouchdb-browser');
 var patientDb = new PouchDB('patients');
+const uuidv4 = require('uuid/v4');
 
 let queryParams = document.location.search;
 const id = queryParams.substring(queryParams.indexOf("=") + 1);
 
-// TODO: remove
-const diagnosis1 = {
-    _id: '382961979023',
-    date: 'January 1, 2018',
-    type: 'Asthma'
-};
-
-const diagnosis2 = {
-    _id: '692750871',
-    date: 'August 23, 2018',
-    type: 'Depression'
-};
-
-var diagnoses = [diagnosis1, diagnosis2];
-
 patientDb.get(id)
 .then(function(doc) {
-    let name = doc.name;
-    // let diagnoses = doc.diagnoses;
+    const diagnoses = doc.diagnoses;
+    const checkups = doc.checkups;
 
-    let tableBody = document.getElementById('search-table-body');
-    tableBody.innerHTML = "";
+    let diagnosisTableBody = document.getElementById('diagnosis-table-body');
+    diagnosisTableBody.innerHTML = "";
     for (let i = 0; i < diagnoses.length; i++) {
         const diagnosis = diagnoses[i];
         let row = document.createElement('tr');
-        const link = './diagnostics_' + diagnosis.type + '.html?diagnosisId=' + diagnosis._id + '&patientId=' + id;
+        const link = diagnosis.type.toLowerCase() + '_view' + '.html?diagnosisId=' + diagnosis._id + '&patientId=' + id;
 
         let nameLink = document.createElement('a');
         nameLink.setAttribute('href', link);
@@ -55,7 +41,38 @@ patientDb.get(id)
         row.appendChild(conditionCell);
         row.appendChild(dateCell);
 
-        tableBody.appendChild(row);
+        diagnosisTableBody.appendChild(row);
+    }
+
+    let checkupTableBody = document.getElementById('checkup-table-body');
+    checkupTableBody.innerHTML = "";
+    for (let i = 0; i < checkups.length; i++) {
+        const checkup = checkups[i];
+        let row = document.createElement('tr');
+        // TODO: fix this, it should figure out what sort of eval to go to based on checkup date
+        // and patient date i.e. age & gender
+        const link = './Evaluations_Men_20-59.html?patientId=' + id + '&checkupId=' + checkup._id
+    
+        let dateLink = document.createElement('a');
+        dateLink.setAttribute('href', link);
+        dateLink.innerText = checkup.date;
+
+        let notesLink = document.createElement('a');
+        notesLink.setAttribute('href', link);
+        notesLink.innerText = checkup.notes;
+
+        let dateCell = document.createElement('td');
+        let notesCell = document.createElement('td');
+        
+        notesCell.setAttribute('class', 'wide-table-column');
+
+        dateCell.appendChild(dateLink);
+        notesCell.appendChild(notesLink);
+
+        row.appendChild(dateCell);
+        row.appendChild(notesCell);
+
+        checkupTableBody.appendChild(row);
     }
 
 })
