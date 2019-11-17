@@ -12,10 +12,14 @@ patientDb.get(id)
 
     let diagnosisTableBody = document.getElementById('diagnosis-table-body');
     diagnosisTableBody.innerHTML = "";
+    if (diagnoses) {
+        diagnoses.sort((a,b) => { return b.date - a.date});
+    }
     for (let i = 0; i < diagnoses.length; i++) {
         const diagnosis = diagnoses[i];
         let row = document.createElement('tr');
-        const link = diagnosis.type.toLowerCase() + '_view' + '.html?diagnosisId=' + diagnosis._id + '&patientId=' + id;
+        const type = getEnglishType(diagnosis.type);
+        const link = type + '_view' + '.html?diagnosisId=' + diagnosis._id + '&patientId=' + id;
 
         let nameLink = document.createElement('a');
         nameLink.setAttribute('href', link);
@@ -23,7 +27,7 @@ patientDb.get(id)
 
         let conditionLink = document.createElement('a');
         conditionLink.setAttribute('href', link);
-        conditionLink.innerText = diagnosis.type;
+        conditionLink.innerText = type[0].toUpperCase() + type.substr(1);
 
         let dateLink = document.createElement('a');
         dateLink.setAttribute('href', link);
@@ -79,3 +83,15 @@ patientDb.get(id)
 .catch(function(err) {
     console.log(err);
 });
+
+var getEnglishType = (type) => {
+    const english_types = ['asthma', 'depression', 'diabetes', 'pregnancy', 'epilepsy', 'hypertension'];
+    const spanish_types = ['asma', 'depresión', 'diabetes', 'embarazada', 'epilepsia', 'hipertensión'];
+
+    for (let i = 0; i < spanish_types.length; i++) {
+        if (type.toLowerCase() === spanish_types[i]) {
+            return english_types[i];
+        }
+    }
+    return type;
+};

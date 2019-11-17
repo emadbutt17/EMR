@@ -41,7 +41,7 @@ function addChildren5() {
             };
 
             if (patient.evaluations) {
-                patient.evalustions.push(children5);
+                patient.evaluations.push(children5);
             } else {
                 patient.evaluations = [children5];
             }
