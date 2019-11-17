@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet_diseasecheck.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/navbar.css">
+    <meta charset="utf-8">
+    <title>Diagnósticos</title>
+</head>
+
+<body>
+    <h>
+        <div class="flex-container-nav">
+            <div class="flex-item-nav center-image"><a href="./CeS_Homescreen.html"><img height="45" width="45"
+                        src="../../resources/shortcuticon_Xx0_icon.ico"></a></div>
+            <div class="flex-item-nav">Diagnósticos - Depresión</div>
+            <div class="flex-item-nav" style="flex-grow: 12"></div>
+            <div class="flex-item-nav navbutton" style="height:58px;"><a href="./Registration.html">REGISTRAR
+                    PACIENTE</a></div>
+            <div class="flex-item-nav navbutton" style="height:58px;"><a href="./patient_search_flex.html">BUSCAR</a>
+            </div>
+            <div class="flex-item-nav navbutton" style="height:58px;"><a href="./pharmacy.html">FARMACIA</a></div>
+        </div>
+        <div class="buttonrow">
+            <form id="Registrationform" action="Diagnostics_Notes.html">
+                <input type="submit" value="Notas">
+            </form>
+            <form id="Registrationform" action="../pages/diagnostics_asthma.html">
+                <input type="submit" value="Asma">
+            </form>
+            <form id="Registrationform" action="../pages/diagnostics_depression.html">
+                <input type="submit" value="Depresión" style="background-color:white;box-shadow: 1px 4px 7px grey;">
+            </form>
+            <form id="Registrationform" action="../pages/Diagnostics_Diabetes.html">
+                <input type="submit" value="Diabetes">
+            </form>
+            <form id="Registrationform" action="../pages/Diagnostics_Pregnancy.html">
+                <input type="submit" value="Embarazada">
+            </form>
+            <form id="Registrationform" action="../pages/Diagnostics_Epilepsy.html">
+                <input type="submit" value="Epilepsia">
+            </form>
+            <form id="Registrationform" action="../pages/Diagnostics_Hypertension.html">
+                <input type="submit" value="Hipertensión">
+            </form>
+            <form id="Registrationform" action="../pages/Diagnostics_Others.html">
+                <input type="submit" value="Otro">
+            </form>
+        </div>
+    </h>
+    <div class="wrapper">
+        <div class="columnWrapper">
+            <div>
+                <label for="PHQ-9">PHQ-9:</label>
+                <br><input class="diseaseInput" type=text id="PHQ-9">
+                <textarea rows="20" cols="50">Notas:  
+                </textarea>
+
+            </div>
+            <div>
+                <label for="currentMedication">Medicación actual:</label>
+                <input class="diseaseInput" type=text id="currentMedication">
+            </div>
+
+            <div>
+                <label for="sideEffects">Efectos secundarios antidepresivos:</label>
+                <input class="diseaseInput" type=text id="sideEffects">
+            </div>
+            <div>
+                <label for="symptoms">síntomas:</label>
+                <input class="diseaseInput" type=text id="symptoms">
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../depression_view_bundle.js"></script>
+</body>
+
+</html>

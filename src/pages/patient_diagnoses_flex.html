@@ -4,32 +4,59 @@
 <head>
     <link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
     <link rel="stylesheet" type="text/css" href="../stylesheets/patient_diagnoses.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/navbar.css">
     <meta charset="utf-8">
     <title>Diagnósticos</title>
 </head>
 
 <body class="full-height">
 
-    <h>
-        <div class="rectangle">Diagnósticos del Paciente</div>
-    </h>
-    
+    <div class="flex-container-nav">
+        <div class="flex-item-nav" style="flex-grow: 2"></div>
+        <div class="flex-item-nav center-image"><a href="./CeS_Homescreen.html"><img height="45" width="45"
+                    src="../../resources/shortcuticon_Xx0_icon.ico"></a></div>
+        <div class="flex-item-nav" style="flex-grow: 12"></div>
+        <div class="flex-item-nav navbutton"><a href="./Registration.html">REGISTRAR PACIENTE</a></div>
+        <div class="flex-item-nav navbutton"><a href="./patient_search_flex.html">BUSCAR</a></div>
+        <div class="flex-item-nav navbutton"><a href="./pharmacy.html">FARMACIA</a></div>
+        <div class="flex-item-nav" style="flex-grow: 2"></div>
+    </div>
+
     <div class="flex-container">
 
-        <div class="top-pad"></div>
+        <div class="page-header">Historia del Paciente</div>
 
-        <div class="search-container" id="search-by-name-container">
+        <div class="table-container" id="search-by-name-container">
 
-            <table class="search-table" id="search-table-element">
+            <table>
                 <thead>
-                    <th>Name</th>
-                    <th>Condition</th>
-                    <th>Date</th>
+                    <th>el Nombre</th>
+                    <th>la Affección</th>
+                    <th>la Fecha</th>
                 </thead>
-                <tbody id="search-table-body"></tbody>
+                <tbody id="diagnosis-table-body"></tbody>
             </table>
 
         </div>
+
+    </div>
+
+    <div class="flex-container">
+
+        <div class="page-header">El Chequeo</div>
+
+        <div class="table-container">
+
+            <table>
+                <thead>
+                    <th>la Fecha</th>
+                    <th style="text-align: left">las Notas</th>
+                </thead>
+                <tbody id="checkup-table-body"></tbody>
+            </table>
+
+        </div>
+
     </div>
 
     <script type="text/javascript" src="../../patient_diagnoses_bundle.js"></script>

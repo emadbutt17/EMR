@@ -7,6 +7,15 @@ button {
     margin: 50px 20px;
 }
 
+.long-button {
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    margin: 0px;
+    background-color: #073763ff;
+    color: white;
+}
+
 .medium-button {
     width: 120px;
     height: 50px;
