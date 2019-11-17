@@ -11,11 +11,11 @@ const id = queryParams.substring(queryParams.indexOf("=") + 1);
 function addEpilepsy() {
     patientDb.get(id)
         .then((patient) => {
-            episodenum = document.getElementById('Episode_Number').value;
-            seizurelen = document.getElementById('Seizure_Length').value;
-            unmovements = document.getElementById('Uncontrollable_Movements').value;
-            episodeyear = document.getElementById('Episodes_Year').value;
-            episodered = document.getElementById('Episode_Reduction').value;
+            episodenum = document.getElementById('episodenum').value;
+            seizurelen = document.getElementById('seizurelen').value;
+            unmovements = document.getElementById('unmovements').value;
+            episodeyear = document.getElementById('episodeyear').value;
+            episodered = document.getElementById('episodered').value;
             
             let epilepsy = {
                 _id: uuidv4(),
@@ -29,7 +29,7 @@ function addEpilepsy() {
             };
 
             if (patient.diagnoses) {
-                patient.diagnosds.append(epilepsy);
+                patient.diagnoses.push(epilepsy);
             } else {
                 patient.diagnoses = [epilepsy];
             }
