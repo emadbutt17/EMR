@@ -5,8 +5,8 @@ var patientDb = new PouchDB('patients');
 let queryParams = document.location.search;
 const id = queryParams.substring(queryParams.indexOf("=") + 1);
 
-let children5Button = document.getElementById('children5Button');
-children5Button.onclick = addChildren5;
+let submitButton = document.getElementById('submit-button');
+submitButton.onclick = addChildren5;
 
 function addChildren5() {
     patientDb.get(id)
@@ -34,11 +34,12 @@ function addChildren5() {
                 date: new Date().toLocaleDateString('en-GB')
             };
 
-            if (patient.evaluations) {
-                patient.evalustions.push(children5);
+            if (patient.checkups) {
+                patient.checkups.push(children5);
             } else {
-                patient.evaluations = [children5];
+                patient.checkups = [children5];
             }
+
             patientDb.put(patient)
                 .then((res) => {
                     document.location.href = './patient_page.html?id=' + id;

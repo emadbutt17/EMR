@@ -120,7 +120,7 @@ patientDb.get(id)
                     let familyViolenceNotesHeader = document.createElement('div');
                     let familyViolenceNotes = document.createElement('div');
 
-                    tbNotesHeader.innerText = 'Tuberculosis Notes';
+                    tbNotesHeader.innerText = 'La Tuberculosis';
                     tbNotes.innerText = checkup.tbNotes;
                     oralNotesHeader.innerText = 'Oral Health Notes';
                     oralNotes.innerText = checkup.oralNotes;
@@ -161,10 +161,10 @@ patientDb.get(id)
                         container.appendChild(nodes[0]);
                         container.appendChild(nodes[1]);
                     }
-                } else if (checkup.type === 'Child1-4') {
+                } else if (checkup.type === 'child1-4') {
                     container.innerText = 'Notas';
-                    categories = [];
-                    noteCategories = [];
+                    categories = ['El Examen Físico', 'El Entorno Familiar', 'El Desarrollo Psicomotor', 'Los Problemas Posturales', 'Los Parásitos', 'La Tuberculosis'];
+                    noteCategories = ['physicalNotes', 'familyEnvironmentNotes', 'psychomotorNotes', 'postureNotes', 'parasiteNotes', 'tbNotes'];
                     for (let i = 0; i < categories.length; i++) {
                         nodes = createNotesNodes(categories[i], checkup[noteCategories[i]]);
                         container.appendChild(nodes[0]);
@@ -172,7 +172,7 @@ patientDb.get(id)
                     }
                 } else if (checkup.type === 'child5-9') {
                     container.innerText = 'Notas';
-                    categories = ['Physical', 'Auditory Deficiency', 'Visual Deficiency', 'Disabilities', 'Posture', 'Tuberculosis', 'Nutrition', 'Domestic Violence'];
+                    categories = ['El Examen Físico', 'Auditory Deficiency', 'Visual Deficiency', 'Disabilities', 'Posture', 'Tuberculosis', 'Nutrition', 'Domestic Violence'];
                     noteCategories = ['physicalNotes', 'auditoryDeficiencyNotes', 'visualDeficiencyNotes', 'disabilityNotes', 'postureNotes', 'tbNotes', 'nutritionNotes', 'domesticViolenceNotes'];
                     for (let i = 0; i < categories.length; i++) {
                         nodes = createNotesNodes(categories[i], checkup[noteCategories[i]]);
@@ -181,7 +181,7 @@ patientDb.get(id)
                     }
                 } else if (checkup.type.toLowerCase() === 'child10-19') {
                     container.innerText = 'Notas';
-                    categories = ['Physical', 'Auditory Deficiency', 'Visual Deficiency', 'HIV/AIDS', 'Nutrition', 'Addiction'];
+                    categories = ['El Examen Físico', 'Auditory Deficiency', 'Visual Deficiency', 'HIV/AIDS', 'Nutrition', 'Addiction'];
                     noteCategories = ['physicalNotes', 'auditoryDeficiencyNotes', 'visualDeficiencyNotes', 'hivNotes', 'nutritionNotes', 'addictionNotes'];
                     for (let i = 0; i < categories.length; i++) {
                         nodes = createNotesNodes(categories[i], checkup[noteCategories[i]]);
@@ -190,8 +190,8 @@ patientDb.get(id)
                     }
                 } else if (checkup.type === 'newborn') {
                     container.innerText = 'Notas';
-                    categories = [];
-                    noteCategories = [];
+                    categories = ['Los Signos de Alarma', 'Los Defectos de Nacimiento', 'Las Condiciones del Parto', 'El Examen Físico', 'El Cordón Umbilical', 'La Pantalla Neonatal', 'Los Niveles de Vitamina', 'Las Vacunas', 'Otro'];
+                    noteCategories = ['alarmSignsNotes', 'birthDefectsNotes', 'laborConditionNotes', 'physicalNotes', 'umbilicalNotes', 'neonatalNotes', 'vitaminsNotes', 'vaccinesNotes', 'otherNotes'];
                     for (let i = 0; i < categories.length; i++) {
                         nodes = createNotesNodes(categories[i], checkup[noteCategories[i]]);
                         container.appendChild(nodes[0]);
@@ -240,7 +240,7 @@ var getSpanishType = (type) => {
 
 var createNotesNodes = (type, notes) => {
     let headerNode = document.createElement('div');
-    headerNode.innerText = type + ' Notas';
+    headerNode.innerText = type;
     headerNode.setAttribute('class', 'notes-header');
 
     let notesNode = document.createElement('div');

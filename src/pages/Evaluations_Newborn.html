@@ -1,79 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-    <link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/evaluationsStylesheet.css">
+     <link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
+     <link rel="stylesheet" type="text/css" href="../stylesheets/evaluationsStylesheet.css">
      <link rel="stylesheet" type="text/css" href="../stylesheets/navbar.css">
-    <meta charset="utf-8">
-    <title>Evaluaciónes</title>
-   
+     <meta charset="utf-8">
+     <title>Evaluaciónes</title>
+
 </head>
 
 <body>
-        <div class="flex-container-nav">
-        <div class="flex-item-nav" style="flex-grow: 2"></div>
-        <div class="flex-item-nav center-image"><a href="./CeS_Homescreen.html"><img height="45" width="45"
-                    src="../../resources/shortcuticon_Xx0_icon.ico"></a></div>
-        <div class="flex-item-nav" style="flex-grow: 12"></div>
-        <div class="flex-item-nav navbutton"><a href="./Registration.html">REGISTRAR PACIENTE</a></div>
-        <div class="flex-item-nav navbutton"><a href="./patient_search_flex.html">BUSCAR</a></div>
-        <div class="flex-item-nav navbutton"><a href="./pharmacy.html">FARMACIA</a></div>
-        <div class="flex-item-nav" style="flex-grow: 2"></div>
-    </div>
-    
-    <div class="page-title">Evaluación de Recién Racidos</div>
-    <p>
-        <label for="alarmSigns">¿Signos de alarma?</label>
-        <input type=checkbox id="alarmSignsYes">
-        <label for="alarmSignsYes">Si</label>
-        <input type=checkbox id="alarmSignsNo">
-        <label for="alarmSignsNo">No</label><br>
-        <input type=text id="alarmSignsExp" placeholder="En caso afirmativo explicar"></p>
-    <p>
-        <p>
-        <label for="cancerSigns">¿Defectos de nacimiento o signos de cáncer neonatal?</label>
-        <input type=checkbox id="cancerSignsYes">
-        <label for="cancerSignsYes">Si</label>
-        <input type=checkbox id="cancerSignsNo">
-        <label for="cancerSignsNo">No</label><br>
-        <input type=text id="cancerSignsExp" placeholder="En caso afirmativo explicar"></p>
-    <p>
-    <input type=checkbox id="laborConitions">
-    <label for="laborConditions">Verificar condiciones del parto.</label><br>
-    <input type=text id="notes" placeholder="Notas">
-    </p>
+     <div class="flex-container-nav">
+          <div class="flex-item-nav" style="flex-grow: 2"></div>
+          <div class="flex-item-nav center-image"><a href="./CeS_Homescreen.html"><img height="45" width="45"
+                         src="../../resources/shortcuticon_Xx0_icon.ico"></a></div>
+          <div class="flex-item-nav" style="flex-grow: 12"></div>
+          <div class="flex-item-nav navbutton"><a href="./Registration.html">REGISTRAR PACIENTE</a></div>
+          <div class="flex-item-nav navbutton"><a href="./patient_search_flex.html">BUSCAR</a></div>
+          <div class="flex-item-nav navbutton"><a href="./pharmacy.html">FARMACIA</a></div>
+          <div class="flex-item-nav" style="flex-grow: 2"></div>
+     </div>
+
+     <div class="page-title">Evaluación de Recién Racidos</div>
      <p>
-    <input type=checkbox id="physExam">
-    <label for="physExam">Realizar un examen físico completo.</label><br>
-    <input type=text id="notes" placeholder="Notas">
-    </p>
-        <p>
-    <input type=checkbox id="cordExam">
-    <label for="cordExam">Comprobar el cordón umbilical.</label><br>
-    <input type=text id="notes" placeholder="Notas">
-    </p>
-         <p>
-    <input type=checkbox id="neonatalScreen">
-    <label for="neonatalScreen">Realizar pantalla neonatal.</label><br>
-    <input type=text id="notes" placeholder="Notas">
-    </p>
-         <p>
-    <input type=checkbox id="vitamins">
-    <label for="vitamins">Verifique los niveles de vitamina A y K. Verifique la profilaxis oftálmica.</label><br>
-    <input type=text id="notes" placeholder="Notas">
-    </p>
-         <p>
-    <input type=checkbox id="vaccines">
-    <label for="vaccines">Aplique la vacuna BCG y la vacuna contra la hepatitis B.</label><br>
-    <input type=text id="notes" placeholder="Notas">
-    </p>
-         <p>
-    <input type=checkbox id="breastfeed">
-    <label for="breastfeed">Educar a la madre y al padre sobre la lactancia materna.</label>
-    </p>
-         <p>
-    <input type=checkbox id="other">
-    <label for="other">Otro</label><br>
-    <input type=text id="notes" placeholder="Notas">
-    </p>
+          <label for="alarmSigns">¿Signos de alarma?</label>
+          <input type=checkbox id="alarmSignsYes">
+          <label for="alarmSignsYes">Si</label>
+          <input type=checkbox id="alarmSignsNo">
+          <label for="alarmSignsNo">No</label><br>
+          <input type=text id="alarmSignsNotes" placeholder="En caso afirmativo explicar"></p>
+     <p>
+          <p>
+               <label for="cancerSigns">¿Defectos de nacimiento o signos de cáncer neonatal?</label>
+               <input type=checkbox id="cancerSignsYes">
+               <label for="cancerSignsYes">Si</label>
+               <input type=checkbox id="cancerSignsNo">
+               <label for="cancerSignsNo">No</label><br>
+               <input type=text id="birthDefectsNotes" placeholder="En caso afirmativo explicar"></p>
+          <p>
+               <input type=checkbox id="laborConitions">
+               <label for="laborConditions">Verificar condiciones del parto.</label><br>
+               <input type=text id="laborConditionNotes" placeholder="Notas">
+          </p>
+          <p>
+               <input type=checkbox id="physExam">
+               <label for="physExam">Realizar un examen físico completo.</label><br>
+               <input type=text id="physicalNotes" placeholder="Notas">
+          </p>
+          <p>
+               <input type=checkbox id="cordExam">
+               <label for="cordExam">Comprobar el cordón umbilical.</label><br>
+               <input type=text id="umbilicalNotes" placeholder="Notas">
+          </p>
+          <p>
+               <input type=checkbox id="neonatalScreen">
+               <label for="neonatalScreen">Realizar pantalla neonatal.</label><br>
+               <input type=text id="neonatalNotes" placeholder="Notas">
+          </p>
+          <p>
+               <input type=checkbox id="vitamins">
+               <label for="vitamins">Verifique los niveles de vitamina A y K. Verifique la profilaxis
+                    oftálmica.</label><br>
+               <input type=text id="vitaminsNotes" placeholder="Notas">
+          </p>
+          <p>
+               <input type=checkbox id="vaccines">
+               <label for="vaccines">Aplique la vacuna BCG y la vacuna contra la hepatitis B.</label><br>
+               <input type=text id="vaccinesNotes" placeholder="Notas">
+          </p>
+          <p>
+               <input type=checkbox id="breastfeed">
+               <label for="breastfeed">Educar a la madre y al padre sobre la lactancia materna.</label>
+          </p>
+          <p>
+               <input type=checkbox id="other">
+               <label for="other">Otro</label><br>
+               <input type=text id="otherNotes" placeholder="Notas">
+          </p>
+     </p>
+
+     <button id="submit-button">Enviar</button>
+
+     <script type="text/javascript" src="../../evaluations_newborn_bundle.js"></script>
+</body>
+
+</html>
