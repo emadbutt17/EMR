@@ -1,43 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-<link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
-<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet_diseasecheck.css">
-<link rel="stylesheet" type="text/css" href="../stylesheets/navbar.css">
-<meta charset="utf-8">
-<title>Diagnósticos</title>
+    <link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet_diseasecheck.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/navbar.css">
+    <meta charset="utf-8">
+    <title>Diagnósticos</title>
 </head>
+
 <body>
-<h>
-<div class="flex-container-nav">
+    <div class="flex-container-nav">
         <div class="flex-item-nav center-image"><a href="./CeS_Homescreen.html"><img height="45" width="45"
                     src="../../resources/shortcuticon_Xx0_icon.ico"></a></div>
         <div class="flex-item-nav" style="flex-grow: 12"></div>
-        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./Registration.html">REGISTRAR PACIENTE</a></div>
-        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./patient_search_flex.html">BUSCAR</a></div>
-        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./pharmacy.html">FARMACIA</a></div> 
+        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./Registration.html">REGISTRAR
+                PACIENTE</a></div>
+        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./patient_search_flex.html">BUSCAR</a>
+        </div>
+        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./pharmacy.html">FARMACIA</a></div>
     </div>
 
-</h>
-    <p>
+    <div class="page-title">Hipertensión</div>
+
+    <textarea rows="20" cols="50">Notas:</textarea>
     <label for="Systolic_Pressure">Presión Sistólica:</label>
-    <input type=text name="Systolic_Pressure" id="syspressure" >
-     <textarea rows="20" cols="50">Notas:
-    </textarea></p>
-   <p><label for="Diastolic_Pressure">Presión diastólica:</label>
-       <input type=text name="Diastolic_Pressure" id="diapressure" > </p>
+    <input type=text name="Systolic_Pressure" id="syspressure">
+    <p><label for="Diastolic_Pressure">Presión diastólica:</label>
+        <input type=text name="Diastolic_Pressure" id="diapressure"> </p>
     <p><label for="Smoking/Alcohol">Fumar/Alcohol:</label>
-        <input type=text name="Smoking/Alcohol" id="smokingalcohol" ></p>
-   <p><label for="Height">Altura:</label>
-       <input type=text name="Height" id="height" ></p>
+        <input type=text name="Smoking/Alcohol" id="smokingalcohol"></p>
+    <p><label for="Height">Altura:</label>
+        <input type=text name="Height" id="height"></p>
     <p><label for="Weight">Peso:</label>
-        <input type=text name="Weight" id="weight" > </p>
+        <input type=text name="Weight" id="weight"> </p>
     <p><label for="BMI">BMI:</label>
-        <input type=text name="BMI" id="bmi" >
-    <p2>
-        <br><br><br><button id="hypertensionButton">Enviar</button>
-    </p2>
+        <input type=text name="BMI" id="bmi">
     </p>
-        <script type="text/javascript" src="../../Diagnostics_Hypertensionbundle.js"></script>
- </body>
+    <br><br><br><button id="hypertensionButton">Enviar</button>
+
+    <script type="text/javascript" src="../../diagnostics_hypertension_bundle.js"></script>
+</body>
+
 </html>

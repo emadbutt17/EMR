@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <link rel="icon" href="../../resources/shortcuticon_Xx0_icon.ico">
     <link rel="stylesheet" type="text/css" href="../stylesheets/evaluationsStylesheet.css">
-     <link rel="stylesheet" type="text/css" href="../stylesheets/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/navbar.css">
     <meta charset="utf-8">
     <title>Evaluaciónes</title>
-   
+
 </head>
 
 <body>
-        <div class="flex-container-nav">
+    <div class="flex-container-nav">
         <div class="flex-item-nav" style="flex-grow: 2"></div>
         <div class="flex-item-nav center-image"><a href="./CeS_Homescreen.html"><img height="45" width="45"
                     src="../../resources/shortcuticon_Xx0_icon.ico"></a></div>
@@ -21,62 +21,68 @@
         <div class="flex-item-nav navbutton"><a href="./pharmacy.html">FARMACIA</a></div>
         <div class="flex-item-nav" style="flex-grow: 2"></div>
     </div>
-    
+
     <div class="page-title">Evaluación de Niño (5-9 Años)</div>
-   <p>
-    <input type=checkbox id="physExam9">
-    <label for="physExam9">Realizar un examen físico completo.</label><br>
-    <input type=text id="notes" placeholder="Notas">
+    <p>
+        <input type=checkbox id="physExam9">
+        <label for="physExam9">Realizar un examen físico completo.</label><br>
+        <input type=text id="physicalNotes" placeholder="Notas">
     </p>
-     <p>
-    <input type=checkbox id="audioVisualAcuity">
-    <label for="audioVisualAcuity">Evaluar la agudeza visual y auditiva.</label><br>
-    <input type=text id="notes" placeholder="Auditivo"> <input type=text id="notes" placeholder="Visual">
+    <p>
+        <input type=checkbox id="audioVisualAcuity">
+        <label for="audioVisualAcuity">Evaluar la agudeza visual y auditiva.</label><br>
+        <input type=text id="auditoryDeficiencyNotes" placeholder="Auditivo">
+        <input type=text id="visualDeficiencyNotes" placeholder="Visual">
     </p>
-     <p>
-    <input type=checkbox id="disibilities">
-    <label for="hygiene">Detecta discapacidades o trastornos que afectan el aprendizaje.</label>
-    <input type=text id="notes" placeholder="Notas">
+    <p>
+        <input type=checkbox id="disibilities">
+        <label for="hygiene">Detecta discapacidades o trastornos que afectan el aprendizaje.</label>
+        <input type=text id="disabilityNotes" placeholder="Notas">
     </p>
-     <p>
-    <input type=checkbox id="posture9">
-    <label for="posture9">Identificar problemas posturales.</label><br>
-    <input type=text id="notes" placeholder="Notas">
+    <p>
+        <input type=checkbox id="posture9">
+        <label for="posture9">Identificar problemas posturales.</label><br>
+        <input type=text id="postureNotes" placeholder="Notas">
     </p>
-        <p>
-    <input type=checkbox id="oral9">
-    <label for="oral9">Promover la salud bucal.</label><br>
+    <p>
+        <input type=checkbox id="oral9">
+        <label for="oral9">Promover la salud bucal.</label><br>
     </p>
-         <p>
-    <input type=checkbox id="vaxschedule9">
-    <label for="vaxschedule9">Actualizar el calendario de vacunación.</label><br>
+    <p>
+        <input type=checkbox id="vaxschedule9">
+        <label for="vaxschedule9">Actualizar el calendario de vacunación.</label><br>
     </p>
-         <p>
-    <input type=checkbox id="preventTB9">
-    <label for="preventTB9">Administra quimioprofilaxis para tuberculosis pulmonar.</label><br>
-    <input type=text id="notes" placeholder="Notas">     
+    <p>
+        <input type=checkbox id="preventTB9">
+        <label for="preventTB9">Administra quimioprofilaxis para tuberculosis pulmonar.</label><br>
+        <input type=text id="tbNotes" placeholder="Notas">
     </p>
     <p>
         <input type=checkbox id="nutritionGiude">
         <label for="nutritionGuide">Proporcionar orientación nutricional.</label><br>
-        <input type=text id="nutritionGuide" placeholder="Notas"></p>
+        <input type=text id="nutritionNotes" placeholder="Notas"></p>
     <p>
-    <input type=checkbox id="activityAccidents">
-    <label for="activityAccidents">Promover la actividad física y la prevención de accidentes.</label>
+        <input type=checkbox id="activityAccidents">
+        <label for="activityAccidents">Promover la actividad física y la prevención de accidentes.</label>
     </p>
     <p>
-    <input type=checkbox id="hygiene">
-    <label for="hygiene">Promover la higiene personal y familiar.</label>
+        <input type=checkbox id="hygiene">
+        <label for="hygiene">Promover la higiene personal y familiar.</label>
     </p>
-     <p>
-    <input type=checkbox id="violence">
-    <label for="violence">Promover la prevención de la violencia doméstica y detectar casos.</label><br>
-    <input type=text id="notes" placeholder="Notas">
+    <p>
+        <input type=checkbox id="violence">
+        <label for="violence">Promover la prevención de la violencia doméstica y detectar casos.</label><br>
+        <input type=text id="domesticViolenceNotes" placeholder="Notas">
     </p>
-        <p>
-    <input type=checkbox id="drugs">
-    <label for="drugs">Promover la prevención del consumo de drogas y alcohol. refiérase al Centro New Life de CONADIC.</label><br>
+    <p>
+        <input type=checkbox id="drugs">
+        <label for="drugs">Promover la prevención del consumo de drogas y alcohol. refiérase al Centro New Life de
+            CONADIC.</label><br>
     </p>
-    
-    </body>
+
+    <button id="submit-button">Enviar</button>
+
+    <script type="text/javascript" src="../../evaluations_children_9_bundle.js"></script>
+</body>
+
 </html>
