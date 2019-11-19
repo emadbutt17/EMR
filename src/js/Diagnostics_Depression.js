@@ -15,6 +15,7 @@ function addDepression() {
             currentMedication = document.getElementById('currentMedication').value;
             sideEffects = document.getElementById('sideEffects').value;
             symptoms = document.getElementById('symptoms').value;
+            notes = document.getElementById('notes').value;
             
             let depression = {
                 _id: uuidv4(),
@@ -23,6 +24,7 @@ function addDepression() {
                 currentMedication: currentMedication,
                 sideEffects: sideEffects,
                 symptoms: symptoms,
+                notes: notes,
                 date: new Date().toLocaleDateString('en-GB')
             };
 

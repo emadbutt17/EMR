@@ -25,6 +25,7 @@ patientDb.get(patientId)
             document.getElementById('smoke').value = diagnosis.smoke ? diagnosis.smoke : '';
             document.getElementById('smokeFrequency').value = diagnosis.smokeFrequency ? diagnosis.smokeFrequency : '';
             document.getElementById('smokeAmount').value = diagnosis.smokeAmount ? diagnosis.smokeAmount : '';
+            document.getElementById('notes').value = diagnosis.notes ? diagnosis.notes : '';
         }
     })
     .catch(function (err) {

@@ -23,6 +23,7 @@ patientDb.get(patientId)
             document.getElementById('currentMedication').value = diagnosis.currentMedication ? diagnosis.currentMedication : '';
             document.getElementById('sideEffects').value = diagnosis.sideEffects ? diagnosis.sideEffects : '';
             document.getElementById('symptoms').value = diagnosis.symptoms ? diagnosis.symptoms : '';
+            document.getElementById('notes').value = diagnosis.notes ? diagnosis.notes : '';
         }
     })
     .catch(function (err) {

@@ -17,6 +17,7 @@ function addAsthma(){
         smoke = document.getElementById('smoke').value;
         smokeFrequency = document.getElementById('smokeFrequency').value;
         smokeAmount = document.getElementById('smokeAmount').value;
+        notes = document.getElementById('notes').value;
         
         let asthma = {
             _id: uuidv4(),
@@ -27,6 +28,7 @@ function addAsthma(){
             smoke: smoke,
             smokeFrequency: smokeFrequency,
             smokeAmount: smokeAmount,
+            notes: notes,
             date: new Date().toLocaleDateString('en-GB')
         };
 
