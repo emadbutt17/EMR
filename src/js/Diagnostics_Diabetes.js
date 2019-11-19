@@ -11,14 +11,15 @@ const id = queryParams.substring(queryParams.indexOf("=") + 1);
 function addDiabetes(){
     patientDb.get(id)
         .then((patient) => {
-            diet = document.getElementById('diet').value;
-            vision = document.getElementById('vision').value;
-            bloodTop = document.getElementById('bloodTop').value;
-            bloodBottom = document.getElementById('bloodBottom').value;
-            bloodSugar = document.getElementById('bloodSugar').value;
-            hemoglobin = document.getElementById('hemoglobin').value;
-            insulin = document.getElementById('insulin').value;
-            ifYes = document.getElementById('ifYes').value;
+            let diet = document.getElementById('diet').value;
+            let vision = document.getElementById('vision').value;
+            let bloodTop = document.getElementById('bloodTop').value;
+            let bloodBottom = document.getElementById('bloodBottom').value;
+            let bloodSugar = document.getElementById('bloodSugar').value;
+            let hemoglobin = document.getElementById('hemoglobin').value;
+            let insulin = document.getElementById('insulin').value;
+            let ifYes = document.getElementById('ifYes').value;
+            let notes = document.getElementById('notes').value;
             
             let diabetes = {
                 _id: uuidv4(),
@@ -31,6 +32,7 @@ function addDiabetes(){
                 hemoglobin: hemoglobin,
                 insulin: insulin,
                 ifYes: ifYes,
+                notes: notes,
                 date: new Date().toLocaleDateString('en-GB')
             };
 

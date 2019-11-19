@@ -11,12 +11,13 @@ const id = queryParams.substring(queryParams.indexOf("=") + 1);
 function addHypertension() {
     patientDb.get(id)
         .then((patient) => {
-            syspressure = document.getElementById('syspressure').value;
-            diapressure = document.getElementById('diapressure').value;
-            smokingalcohol = document.getElementById('smokingalcohol').value;
-            height = document.getElementById('height').value;
-            weight = document.getElementById('weight').value;
-            bmi = document.getElementById('bmi').value;
+            let syspressure = document.getElementById('syspressure').value;
+            let diapressure = document.getElementById('diapressure').value;
+            let smokingalcohol = document.getElementById('smokingalcohol').value;
+            let height = document.getElementById('height').value;
+            let weight = document.getElementById('weight').value;
+            let bmi = document.getElementById('bmi').value;
+            let notes = document.getElementById('notes').value;
             
             let hypertension = {
                 _id: uuidv4(),
@@ -27,6 +28,7 @@ function addHypertension() {
                 height: height,
                 weight: weight,
                 bmi: bmi,
+                notes: notes,
                 date: new Date().toLocaleDateString('en-GB')
             };
 

@@ -27,6 +27,7 @@ patientDb.get(patientId)
             document.getElementById('hemoglobin').value = diagnosis.hemoglobin ? diagnosis.hemoglobin : '';
             document.getElementById('insulin').value = diagnosis.insulin ? diagnosis.insulin : '';
             document.getElementById('ifYes').value = diagnosis.ifYes ? diagnosis.ifYes : '';
+            document.getElementById('notes').value = diagnosis.notes ? diagnosis.notes : '';
         }
     })
     .catch(function (err) {

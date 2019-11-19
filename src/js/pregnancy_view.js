@@ -18,15 +18,16 @@ patientDb.get(patientId)
         }
 
         if (diagnosis) {
-            weeks = document.getElementById('weeks');
-            weight = document.getElementById('weight');
-            syspressure = document.getElementById('syspressure');
-            diapressure = document.getElementById('diapressure');
-            glucose = document.getElementById('glucose');
-            hemoglobin = document.getElementById('hemoglobin');
-            urtest = document.getElementById('urtest');
-            abdomenMeasurement = document.getElementById('abdomenMeasurement');
-            ultrasound = document.getElementById('ultrasound');
+            let weeks = document.getElementById('weeks');
+            let weight = document.getElementById('weight');
+            let syspressure = document.getElementById('syspressure');
+            let diapressure = document.getElementById('diapressure');
+            let glucose = document.getElementById('glucose');
+            let hemoglobin = document.getElementById('hemoglobin');
+            let urtest = document.getElementById('urtest');
+            let abdomenMeasurement = document.getElementById('abdomenMeasurement');
+            let ultrasound = document.getElementById('ultrasound');
+            let notes = document.getElementById('notes');
 
             weeks.value = diagnosis.weeks ? diagnosis.weeks : '';
             weight.value = diagnosis.weight ? diagnosis.weight : '';
@@ -37,6 +38,7 @@ patientDb.get(patientId)
             urtest.value = diagnosis.urtest ? diagnosis.urtest : '';
             abdomenMeasurement.value = diagnosis.abdomenMeasurement ? diagnosis.abdomenMeasurement : '';
             ultrasound.value = diagnosis.ultrasound ? diagnosis.ultrasound : '';
+            notes.value = diagnosis.notes ? diagnosis.notes : '';
         }
     })
     .catch(function (err) {

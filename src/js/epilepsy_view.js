@@ -18,17 +18,19 @@ patientDb.get(patientId)
         }
 
         if (diagnosis) {
-            episodenum = document.getElementById('episodenum');
-            seizurelen = document.getElementById('seizurelen');
-            unmovements = document.getElementById('unmovements');
-            episodeyear = document.getElementById('episodeyear');
-            episodered = document.getElementById('episodered');
+            let episodenum = document.getElementById('episodenum');
+            let seizurelen = document.getElementById('seizurelen');
+            let unmovements = document.getElementById('unmovements');
+            let episodeyear = document.getElementById('episodeyear');
+            let episodered = document.getElementById('episodered');
+            let notes = document.getElementById('notes');
 
             episodenum.value = diagnosis.episodenum ? diagnosis.episodenum : '';
             seizurelen.value = diagnosis.seizurelen ? diagnosis.seizurelen : '';
             unmovements.value = diagnosis.unmovements ? diagnosis.unmovements : '';
             episodeyear.value = diagnosis.episodeyear ? diagnosis.episodeyear : '';
             episodered.value = diagnosis.episodered ? diagnosis.episodered : '';
+            notes.value = diagnosis.notes ? diagnosis.notes : '';
         }
     })
     .catch(function (err) {

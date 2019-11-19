@@ -11,11 +11,12 @@ const id = queryParams.substring(queryParams.indexOf("=") + 1);
 function addEpilepsy() {
     patientDb.get(id)
         .then((patient) => {
-            episodenum = document.getElementById('episodenum').value;
-            seizurelen = document.getElementById('seizurelen').value;
-            unmovements = document.getElementById('unmovements').value;
-            episodeyear = document.getElementById('episodeyear').value;
-            episodered = document.getElementById('episodered').value;
+            let episodenum = document.getElementById('episodenum').value;
+            let seizurelen = document.getElementById('seizurelen').value;
+            let unmovements = document.getElementById('unmovements').value;
+            let episodeyear = document.getElementById('episodeyear').value;
+            let episodered = document.getElementById('episodered').value;
+            let notes = document.getElementById('notes').value;
             
             let epilepsy = {
                 _id: uuidv4(),
@@ -25,6 +26,7 @@ function addEpilepsy() {
                 unmovements: unmovements,
                 episodeyear: episodeyear,
                 episodered: episodered,
+                notes: notes,
                 date: new Date().toLocaleDateString('en-GB')
             };
 

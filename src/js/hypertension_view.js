@@ -18,12 +18,13 @@ patientDb.get(patientId)
         }
 
         if (diagnosis) {
-            syspressure = document.getElementById('syspressure');
-            diapressure = document.getElementById('diapressure');
-            smokingalcohol = document.getElementById('smokingalcohol');
-            height = document.getElementById('height');
-            weight = document.getElementById('weight');
-            bmi = document.getElementById('bmi');
+            let syspressure = document.getElementById('syspressure');
+            let diapressure = document.getElementById('diapressure');
+            let smokingalcohol = document.getElementById('smokingalcohol');
+            let height = document.getElementById('height');
+            let weight = document.getElementById('weight');
+            let bmi = document.getElementById('bmi');
+            let notes = document.getElementById('notes');
 
             syspressure.value = diagnosis.syspressure ? diagnosis.syspressure : '';
             diapressure.value = diagnosis.diapressure ? diagnosis.diapressure : '';
@@ -31,6 +32,7 @@ patientDb.get(patientId)
             height.value = diagnosis.height ? diagnosis.height : '';
             weight.value = diagnosis.weight ? diagnosis.weight : '';
             bmi.value = diagnosis.bmi ? diagnosis.bmi : '';
+            notes.value = diagnosis.notes ? diagnosis.notes : '';
         }
     })
     .catch(function (err) {
