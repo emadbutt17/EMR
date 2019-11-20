@@ -1,3 +1,4 @@
+const uuidv4 = require('uuid/v4');
 var PouchDB = require('pouchdb-browser');
 var patientDb = new PouchDB('patients');
 
@@ -33,8 +34,8 @@ function addPatient() {
     indigenous = document.getElementById('indigenousRegister').checked;
     disability = document.getElementById('disabilityRegister').checked;
     
-    id = document.getElementById('CeSIDRegister').value;
-    let obj = {
+    let id = uuidv4();
+    let patient = {
         _id: id,
         name: first + ' ' + last,
         sex: sex,
@@ -50,15 +51,11 @@ function addPatient() {
         indigenous: indigenous,
         disability: disability
     };
-    patientDb.put(obj, function callback(err,result) {
-        if (!err) {
-            console.log('successfully posted a patient');
-            console.log('response from PouchDB: ' + result);
+    patientDb.put(patient)
+        .then((res) => {
             document.location.href="./patient_page.html?id=" + id;
-        }
-        else {
-            console.log('error occurred');
+        })
+        .catch((err) => {
             console.log(err);
-        }
-    })
+        });
 }
