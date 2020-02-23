@@ -61,6 +61,7 @@ table {
     width: 70vw;
     background-color: white;
     max-height: 70%;
+    border-spacing: 0px;
 }
 
 thead {
@@ -89,6 +90,10 @@ td {
     border-top: 1.5px solid #f8f8ff;
     width: calc(70vw / 3);
     text-align: center;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0;
 }
 
 .wide-table-column {
@@ -144,7 +149,7 @@ a:active, a:visited, a:link {
 }
 
 tbody::-webkit-scrollbar {
-    width: 6px;
+    width: 0px;
 }
 
 .small-margins {
