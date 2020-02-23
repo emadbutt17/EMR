@@ -26,7 +26,10 @@
 
         <div class="top-pad"></div>
 
-        <div class="page-title">Farmacia</div>
+        <div class="flex-container2">
+            <div class="page-title">Farmacia</div>
+            <button id="new-prescription">Nueva Receta</button>
+        </div>
 
         <div class="search-container" id="search-by-name-container">
 
@@ -48,9 +51,25 @@
             <div class="flex-container-row">
                 <p id="drug-name"></p>
                 <p id="padding"></p>
-                <p id="inventory-title">Inventory:</p>
-                <input type="number" id="inventory-number"></p>
-                <button id="inventory-save-button">Save</button>
+                <p id="inventory-title">Inventario:</p>
+                <input type="number" id="inventory-number">
+                <button id="inventory-save-button">Enviar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="new-prescription-modal" class="modal">
+
+        <div class="modal-content">
+            <span id="modal-close2" class="close">&times;</span>
+            <div class="flex-container-row">
+                <p id="receta">Receta: </p>
+                <input type="text" id="new-prescription-name">
+                <p id="padding"></p>
+                <p id="inventory-title">Inventario:</p>
+                <input type="number" id="inventory-number2">
+                <button id="new-prescription-save-button">Enviar</button>
             </div>
         </div>
 

@@ -9,6 +9,10 @@ body {
     margin-left: 10vw;
 }
 
+.patient-info-container {
+    display: flex;
+}
+
 .patient-info {
     margin-top: 10px;
     display: flex;
