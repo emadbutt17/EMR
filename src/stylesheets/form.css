@@ -10,6 +10,7 @@ body {
 	  font-family: "Helvetica","helvetica",sans-serif;
      margin: 0px;
     padding: 0px;
+    text-align: center;
 }
 form {
     display: inline-block;
