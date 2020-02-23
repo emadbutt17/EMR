@@ -53,37 +53,19 @@ function getPatientsByName() {
             let doc = patients.docs[i];
             let row = document.createElement('tr');
 
-            let nameLink = document.createElement('a');
-            nameLink.setAttribute('href', './patient_page.html?id=' + doc._id);
-            nameLink.innerText = doc.name;
-
-            let idLink = document.createElement('a');
-            idLink.setAttribute('href', './patient_page.html?id=' + doc._id);
-            idLink.innerText = doc._id;
-
-            let dobLink = document.createElement('a');
-            dobLink.setAttribute('href', './patient_page.html?id=' + doc._id);
-            dobLink.innerText = doc.dob;
-
-            let sexLink = document.createElement('a');
-            sexLink.setAttribute('href', './patient_page.html?id=' + doc._id);
-            sexLink.innerText = doc.sex;
-
-            let communityLink = document.createElement('a');
-            communityLink.setAttribute('href', './patient_page.html?id=' + doc._id);
-            communityLink.innerText = doc.community;
+            let link = document.createElement('a');
+            link.setAttribute('href', './patient_page.html?id=' + doc._id);
             
             let nameCell = document.createElement('td');
+            nameCell.innerText = doc.name;
             let idCell = document.createElement('td');
+            idCell.innerText = doc._id;
             let dobCell = document.createElement('td');
+            dobCell.innerText = doc.dob;
             let sexCell = document.createElement('td');
+            sexCell.innerText = doc.sex;
             let communityCell = document.createElement('td');
-
-            nameCell.appendChild(nameLink);
-            idCell.appendChild(idLink);
-            dobCell.appendChild(dobLink);
-            sexCell.appendChild(sexLink);
-            communityCell.appendChild(communityLink);
+            communityCell.innerText = doc.community;
 
             row.appendChild(nameCell);
             row.appendChild(idCell);
@@ -91,7 +73,8 @@ function getPatientsByName() {
             row.appendChild(sexCell);
             row.appendChild(communityCell);
 
-            tableBody.appendChild(row);
+            link.appendChild(row);
+            tableBody.appendChild(link);
             
         }
 

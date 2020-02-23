@@ -38,6 +38,25 @@ patientDb.get(id)
     document.getElementById('patient-sex').innerText = 'Sexo: ' + doc.sex;
     document.getElementById('patient-weight').innerText = 'Peso: ' + doc.weight + ' kg';
     document.getElementById('patient-height').innerText = 'Altura: ' + doc.height + ' cm';
+    document.getElementById('patient-birthdate').innerText = 'Fecha de Nacimiento: ' + doc.dob;
+    document.getElementById('patient-community').innerText = 'Communidad: ' + doc.community;
+    checkboxStr = '';
+    if (doc.migrant) {
+        checkboxStr += 'Migrante, ';
+    }
+    if (doc.spss) {
+        checkboxStr += 'SPSS, ';
+    }
+    if (doc.indigenous) {
+        checkboxStr += 'Indígena, ';
+    }
+    if (doc.disability) {
+        checkboxStr += 'Discapacidad';
+    }
+    if (checkboxStr.substr(-2) === ", ") {
+        checkboxStr = checkboxStr.substr(0, checkboxStr.length - 2);
+    }
+    document.getElementById('patient-checkboxes').innerText = checkboxStr
 })
 .catch(function(err) {
     console.log(err);

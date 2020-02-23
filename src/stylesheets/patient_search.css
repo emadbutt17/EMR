@@ -62,9 +62,10 @@ h2 {
 table {
     border-radius: 10px;
     box-shadow: 0 0 6px #bebebe;
-    width: 70vw;
+    width: 80vw;
     background-color: white;
     max-height: 70%;
+    border-spacing: 0px;
 }
 
 thead {
@@ -78,7 +79,7 @@ th {
     color: #fa4251;
     font-size: 18px;
     height: 55px;
-    width: calc(70vw / 5);
+    width: calc(80vw / 5);
     /* font-family: Lato-Bold; */
 }
 
@@ -92,7 +93,29 @@ tbody {
 td {
     height: 50px;
     border-top: 1.5px solid #f8f8ff;
-    width: calc(70vw / 5);
+    /* width: calc(80vw / 5); */
+    text-align: center;
+    vertical-align: middle;
+}
+
+td:nth-child(1), th:nth-child(1) {
+    width: 16vw;
+}
+
+td:nth-child(2), th:nth-child(2) {
+    width: 25vw;
+}
+
+td:nth-child(3), th:nth-child(3) {
+    width: 16vw;
+}
+
+td:nth-child(4), th:nth-child(4) {
+    width: 7vw;
+}
+
+td:nth-child(5), th:nth-child(5) {
+    width: 16vw;
 }
 
 button {
@@ -143,9 +166,13 @@ a:active, a:visited, a:link {
 }
 
 tbody::-webkit-scrollbar {
-    width: 6px;
+    width: 0px;
 }
 
 .small-margins {
     margin: 10px;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0;
 }
