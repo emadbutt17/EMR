@@ -21,27 +21,27 @@ patientDb.get(id)
     const diagnoses = doc.diagnoses;
     const checkups = doc.checkups;
 
-    let diagnosesTableBody = document.getElementById('diagnoses-table-body');
+    let diagnosesTableBody = document.getElementById('diagnosis-table-body');
     diagnosesTableBody.innerHTML = "";
     if (diagnoses) {
         diagnoses.sort((a,b) => { return b.date - a.date }); // TODO: fix this
         for (let i = 0; i < diagnoses.length; i++) {
             
-            const diagnoses = diagnoses[i];
+            const diagnosis = diagnoses[i];
             let row = document.createElement('tr');
-            const type = getEnglishType(diagnoses.type);
+            const type = getEnglishType(diagnosis.type);
             
             const link = document.createElement('a');
-            link.setAttribute('href', './patient_diagnoses_flex.html?id=' + id + '&diagnosesId=' diagnoses._id);
+            link.setAttribute('href', type + '_view.html?diagnosisId=' + diagnosis._id + '&patientId=' + id);
 
             let nameCell = document.createElement('td');
-            nameCell.innerText = diagnoses.name;
+            nameCell.innerText = doc.name;
 
             let conditionCell = document.createElement('td');
             conditionCell.innerText = getSpanishType(type)[0].toUpperCase() + getSpanishType(type).substr(1);
 
             let dateCell = document.createElement('td');
-            dateCell.innerText = diagnoses.date;
+            dateCell.innerText = diagnosis.date;
 
             row.appendChild(nameCell);
             row.appendChild(conditionCell);
