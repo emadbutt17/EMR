@@ -21,41 +21,35 @@ patientDb.get(id)
     const diagnoses = doc.diagnoses;
     const checkups = doc.checkups;
 
-    let diagnosisTableBody = document.getElementById('diagnosis-table-body');
-    diagnosisTableBody.innerHTML = "";
+    let diagnosesTableBody = document.getElementById('diagnoses-table-body');
+    diagnosesTableBody.innerHTML = "";
     if (diagnoses) {
         diagnoses.sort((a,b) => { return b.date - a.date }); // TODO: fix this
         for (let i = 0; i < diagnoses.length; i++) {
-            const diagnosis = diagnoses[i];
+            
+            const diagnoses = diagnoses[i];
             let row = document.createElement('tr');
-            const type = getEnglishType(diagnosis.type);
-            const link = type + '_view' + '.html?diagnosisId=' + diagnosis._id + '&patientId=' + id;
-
-            let nameLink = document.createElement('a');
-            nameLink.setAttribute('href', link);
-            nameLink.innerText = doc.name;
-
-            let conditionLink = document.createElement('a');
-            conditionLink.setAttribute('href', link);
-            conditionLink.innerText = getSpanishType(type)[0].toUpperCase() + getSpanishType(type).substr(1);
-
-            let dateLink = document.createElement('a');
-            dateLink.setAttribute('href', link);
-            dateLink.innerText = diagnosis.date;
+            const type = getEnglishType(diagnoses.type);
+            
+            const link = document.createElement('a');
+            link.setAttribute('href', './patient_diagnoses_flex.html?id=' + id + '&diagnosesId=' diagnoses._id);
 
             let nameCell = document.createElement('td');
-            let conditionCell = document.createElement('td');
-            let dateCell = document.createElement('td');
+            nameCell.innerText = diagnoses.name;
 
-            nameCell.appendChild(nameLink);
-            conditionCell.appendChild(conditionLink);
-            dateCell.appendChild(dateLink);
+            let conditionCell = document.createElement('td');
+            conditionCell.innerText = getSpanishType(type)[0].toUpperCase() + getSpanishType(type).substr(1);
+
+            let dateCell = document.createElement('td');
+            dateCell.innerText = diagnoses.date;
 
             row.appendChild(nameCell);
             row.appendChild(conditionCell);
             row.appendChild(dateCell);
+            
+            link.appendChild(row);
+            diagnosesTableBody.appendChild(link);
 
-            diagnosisTableBody.appendChild(row);
         }
     }
 
@@ -67,19 +61,18 @@ patientDb.get(id)
             let row = document.createElement('tr');
             // TODO: fix this, it should figure out what sort of eval to go to based on checkup date
             // and patient date i.e. age & gender
-            const link = './Evaluations_Men_20-59.html?patientId=' + id + '&checkupId=' + checkup._id
+            const link = document.createElement('a');
+            link.setAttribute('href', './Evaluations_Men_20-59.html?patientId=' + id + '&checkupId=' + checkup._id)
         
-            let dateLink = document.createElement('a');
-            // dateLink.setAttribute('href', link);
-            dateLink.innerText = checkup.date;
-
-            let notesLink = document.createElement('a');
-            // notesLink.setAttribute('href', link);
-            notesLink.innerText = 'Haga clic para notas'; // checkup.notes;
-
             let dateCell = document.createElement('td');
+            // dateLink.setAttribute('href', link);
+            dateCell.innerText = checkup.date;
+
             let notesCell = document.createElement('td');
-            
+            // notesLink.setAttribute('href', link);
+            notesCell.innerText = 'Haga clic para notas'; // checkup.notes;
+
+           
             notesCell.setAttribute('class', 'wide-table-column');
             notesCell.onclick = () => {
                 let container = document.getElementById('flex-container2');
@@ -199,14 +192,11 @@ patientDb.get(id)
                     }
                 }
             }
-
-            dateCell.appendChild(dateLink);
-            notesCell.appendChild(notesLink);
-
             row.appendChild(dateCell);
             row.appendChild(notesCell);
 
-            checkupTableBody.appendChild(row);
+            link.appendChild(row);
+            checkupTableBody.appendChild(link);
         }
     }
 })
