@@ -3,20 +3,7 @@ var PouchDB = require('pouchdb-browser');
 var patientDb = new PouchDB('patients');
 
 myButton = document.getElementById('registerButton');
-myButton.onclick = addPatient; 
-
-var showButton = document.getElementById('registerShowButton');
-showButton.onclick = viewPatients;
-
-function viewPatients() {
-    patientDb.allDocs({include_docs: true, descending: true}, function(err, result) {
-        if (!err) {
-            console.log(result);
-        } else {
-            console.log(err);
-        }
-    });
-}
+myButton.onclick = addPatient;
 
 function addPatient() {
     first = document.getElementById('firstNameRegister').value;
