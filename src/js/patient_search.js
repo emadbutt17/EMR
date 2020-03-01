@@ -41,13 +41,19 @@ function getPatientsByName() {
             console.log(err);
             return null;
         }
-
-        if (patients.docs.length === 0) {
-            return null;
-        }
-
+        
         let tableBody = document.getElementById('search-table-body');
         tableBody.innerHTML = "";
+
+        if (patients.docs.length === 0) {
+            let row = document.createElement('tr');
+            let cell = document.createElement('td');
+            cell.innerText = "ninguna paciente encontrada"
+            cell.style.width = '80vw';
+            row.appendChild(cell);
+            tableBody.appendChild(row);
+        }
+
         for (let i = 0; i < patients.docs.length; i++) {
 
             let doc = patients.docs[i];
