@@ -3,6 +3,11 @@ body {
     height: calc(100vh - 70px);
 }
 
+pre {
+    font-family: "Helvetica", "helvetica", sans-serif;
+/*    height: calc(100vh - 70px);*/
+}
+
 #page-header {
     font-size: 4em;
     text-align: left;
@@ -48,8 +53,8 @@ textarea {
     border-radius: 5px;
     background-color: #fafafa;
     position: absolute;
-    left: 50%;
-    margin-left: 75px;
+    left: 40%;
+    margin-left: 70px;
     text-align: left;
     font-size: 20px;
     font-family: "Helvetica","helvetica",sans-serif;
@@ -83,4 +88,10 @@ button:focus {
 .row-container {
     display: flex;
     flex-direction: column;
+}
+
+.notes-title {
+    font-size: 3em;
+    margin-left: 45vw;
+    padding-top: 0px;
 }
