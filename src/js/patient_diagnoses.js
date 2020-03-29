@@ -34,18 +34,18 @@ patientDb.get(id)
             const link = document.createElement('a');
             link.setAttribute('href', type + '_view.html?diagnosisId=' + diagnosis._id + '&patientId=' + id);
 
-            let nameCell = document.createElement('td');
-            nameCell.innerText = doc.name;
-
-            let conditionCell = document.createElement('td');
-            conditionCell.innerText = getSpanishType(type)[0].toUpperCase() + getSpanishType(type).substr(1);
-
             let dateCell = document.createElement('td');
             dateCell.innerText = diagnosis.date;
 
-            row.appendChild(nameCell);
-            row.appendChild(conditionCell);
+            let conditionCell = document.createElement('td');
+            conditionCell.innerText = getSpanishType(type)[0].toUpperCase() + getSpanishType(type).substr(1);
+            
+            let notesCell = document.createElement('td');
+            notesCell.innerText = doc.notes;
+
             row.appendChild(dateCell);
+            row.appendChild(conditionCell);
+            row.appendChild(notesCell);
             
             link.appendChild(row);
             diagnosesTableBody.appendChild(link);
@@ -59,8 +59,7 @@ patientDb.get(id)
         for (let i = 0; i < checkups.length; i++) {
             const checkup = checkups[i];
             let row = document.createElement('tr');
-            // TODO: fix this, it should figure out what sort of eval to go to based on checkup date
-            // and patient date i.e. age & gender
+          
             const link = document.createElement('a');
             link.setAttribute('href', './Evaluations_Men_20-59.html?patientId=' + id + '&checkupId=' + checkup._id)
         

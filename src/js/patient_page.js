@@ -115,3 +115,31 @@ let diff_years = (dt2, dt1) => {
     return Math.abs(Math.floor(diff/365.25));
    
 }
+
+function addNotes(){
+    patientDb.get(id)
+    .then((patient) => {
+        notes = document.getElementById('notes').value;
+        
+        let patientNotes = {
+            _id: uuidv4(),
+            notes: notes,
+            date: new Date().toLocaleDateString('en-GB')
+        };
+
+        if (patient.diagnoses) {
+            patient.diagnoses.push(patientNotes);
+        } else {
+            patient.diagnoses = [patientNotes];
+        }
+
+        patientDb.put(patient)
+            .then((res) => {
+                document.location.href = './patient_page.html?id=' + id;
+            })
+            .catch((err) => {
+                console.log(err);
+                // TODO: maybe need to remove asthma from local diagnoses so it isn't added twice
+            })
+    });
+}
