@@ -12,43 +12,41 @@
 <body>
 
     <div class="flex-container-nav">
+        <div class="flex-item-nav" style="flex-grow: 2"></div>
         <div class="flex-item-nav center-image"><a href="./CeS_Homescreen.html"><img height="45" width="45"
                     src="../../resources/shortcuticon_Xx0_icon.ico"></a></div>
         <div class="flex-item-nav" style="flex-grow: 12"></div>
-        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./Registration.html">REGISTRAR
-                PACIENTE</a></div>
-        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./patient_search_flex.html">BUSCAR</a>
-        </div>
-        <div class="flex-item-nav navbutton" style="height:58px;"><a href="./pharmacy.html">FARMACIA</a></div>
+        <div class="flex-item-nav navbutton"><a href="./Registration.html">REGISTRAR PACIENTE</a></div>
+        <div class="flex-item-nav navbutton"><a href="./patient_search_flex.html">BUSCAR</a></div>
+        <div class="flex-item-nav navbutton"><a href="./pharmacy.html">FARMACIA</a></div>
+        <div class="flex-item-nav" style="flex-grow: 2"></div>
     </div>
 
     <div class="page-title">Depresión</div>
 
-    <div class="wrapper">
-        <div class="columnWrapper">
-            <div>
+        
+            <p>
+                <textarea rows="20" cols="50" id="notes" placeholder="Notas"></textarea>
                 <label for="PHQ-9">PHQ-9:</label>
-                <br><input class="diseaseInput" type=text id="PHQ-9">
-                <textarea rows="20" cols="50" id="notes">Notas:</textarea>
+                <input type=text name="PHQ9" id="PHQ-9">
 
-            </div>
-            <div>
+            </p>
+            <p>
                 <label for="currentMedication">Medicación actual:</label>
-                <input class="diseaseInput" type=text id="currentMedication">
-            </div>
+                <input type=text name="Current_Medication" id="currentMedication">
+            </p>
 
-            <div>
+            <p>
                 <label for="sideEffects">Efectos secundarios antidepresivos:</label>
-                <input class="diseaseInput" type=text id="sideEffects">
-            </div>
-            <div>
+                <input type=text name="Side_Effects" id="sideEffects">
+            </p>
+            <p>
                 <label for="symptoms">Síntomas:</label>
-                <input class="diseaseInput" type=text id="symptoms">
-            </div>
-        </div>
-    </div>
+                <input type=text name="Symptoms" id="symptoms">
+            </p>
+    
 
-    <button id="depressionButton">Enviar</button>
+    <br><br><br><button id="depressionButton">Enviar</button>
 
     <script type="text/javascript" src="../../diagnostics_depression_bundle.js"></script>
 </body>

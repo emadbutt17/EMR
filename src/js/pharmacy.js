@@ -133,16 +133,15 @@ drugs.allDocs({ include_docs: true }, function(err, res) {
     for (let i = 0; i < res.rows.length; i++) {
         let doc = res.rows[i].doc;
         let row = document.createElement('tr');
-
-        let drugLink = document.createElement('a');
-        drugLink.innerText = doc._id;
-
-        let inventoryLink = document.createElement('a');
-        // Set the link to the appropriate page
-        inventoryLink.innerText = doc.inventory;
+        
+        let link = document.createElement('a');
+        link.setAttribute('href', './pharmacy.html?id=' + doc._id);
 
         let drugCell = document.createElement('td');
+        drugCell.innerText = doc.drug;
+        
         let inventoryCell = document.createElement('td');
+        inventoryCell.innerText = doc.inventory;
 
         drugCell.onclick = () => {
             modal.style.display = 'block';
@@ -165,6 +164,7 @@ drugs.allDocs({ include_docs: true }, function(err, res) {
         row.appendChild(drugCell);
         row.appendChild(inventoryCell);
 
-        tableBody.appendChild(row);
+        link.appendChild(row);
+        tableBody.appendChild(link);
     }
 });
