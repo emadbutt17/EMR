@@ -133,12 +133,14 @@ drugs.allDocs({ include_docs: true }, function(err, res) {
     for (let i = 0; i < res.rows.length; i++) {
         let doc = res.rows[i].doc;
         let row = document.createElement('tr');
+        row.setAttribute('title', 'haga clic para cambiar el inventario');
         
         let link = document.createElement('a');
         link.setAttribute('href', './pharmacy.html?id=' + doc._id);
 
         let drugCell = document.createElement('td');
-        drugCell.innerText = doc.drug;
+        console.log(doc);
+        drugCell.innerText = doc._id;
         
         let inventoryCell = document.createElement('td');
         inventoryCell.innerText = doc.inventory;
@@ -158,8 +160,8 @@ drugs.allDocs({ include_docs: true }, function(err, res) {
             inventoryNumber.value = doc.inventory;
         }
 
-        drugCell.appendChild(drugLink);
-        inventoryCell.appendChild(inventoryLink);
+        // drugCell.appendChild(drugLink);
+        // inventoryCell.appendChild(inventoryLink);
 
         row.appendChild(drugCell);
         row.appendChild(inventoryCell);
