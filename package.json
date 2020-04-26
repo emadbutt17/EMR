@@ -6,7 +6,7 @@
   "dependencies": {
     "pouchdb-browser": "^7.1.1",
     "pouchdb-find": "^7.1.1",
-    "selenium-webdriver": "^4.0.0-alpha.5",
+    "selenium-webdriver": "^4.0.0-alpha.7",
     "uuid": "^3.3.3",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.8"
