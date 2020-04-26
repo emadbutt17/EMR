@@ -198,6 +198,33 @@ patientDb.get(id)
             checkupTableBody.appendChild(link);
         }
     }
+    
+    let generalNotesTableBody = document.getElementById('generalNotes-table-body');
+    diagnosesTableBody.innerHTML = "";
+    if (diagnoses) {
+        diagnoses.sort((a,b) => { return b.date - a.date }); 
+        for (let i = 0; i < diagnoses.length; i++) {
+            
+            const notes = notes[i];
+            let row = document.createElement('tr');
+            
+            const link = document.createElement('a');
+            link.setAttribute('href', type + '_view.html?diagnosisId=' + notes._id + '&patientId=' + id);
+
+            let dateCell = document.createElement('td');
+            dateCell.innerText = diagnosis.date;
+            
+            let notesCell = document.createElement('td');
+            notesCell.innerText = doc.notes;
+
+            row.appendChild(dateCell);
+            row.appendChild(notesCell);
+            
+            link.appendChild(row);
+            generalNotesTableBody.appendChild(link);
+
+        }
+    }
 })
 .catch(function(err) {
     console.log(err);

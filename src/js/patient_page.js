@@ -63,6 +63,44 @@ patientDb.get(id)
 });
 
 // Button Actions
+let submitButton = document.getElementById('generalNotes-button');
+submitButton.onclick = addNotes;
+
+function addNotes() {
+    patientDb.get(id)
+        .then(function(patient) {
+            generalNotes = document.getElementById('generalNotes').value;
+            
+            let child = {
+                _id: uuidv4(),
+                type: 'child1-4',
+                generalNotes: generalNotes,
+                date: new Date().toLocaleDateString('en-GB')
+            };
+
+            if (patient.checkups) {
+                patient.checkups.push(child);
+            } else {
+                patient.checkups = [child];
+            }
+
+            patientDb.put(patient)
+                .then((res) => {
+                    document.location.href = './patient_page.html?id=' + id;
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        })
+        .catch(function(e) {
+            console.log(e);
+        });
+    
+}
+
+
+
+
 let patientHistoryButton = document.getElementById('patient-history-button');
 patientHistoryButton.addEventListener("click", function() {
     document.location.href = "./patient_diagnoses_flex.html?id=" + id;
