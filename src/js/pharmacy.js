@@ -1,5 +1,15 @@
 var PouchDB = require('pouchdb-browser');
 var drugs = new PouchDB('drugs');
+var drugsRemoteDb = new PouchDB('http://localhost:5984/drugs');
+
+// Replication code
+drugs.sync(drugsRemoteDb, {
+    live: true,
+    retry: true
+})
+.on('error', (err) => {
+    console.log(err);
+});
 
 var tableBody = document.getElementById('pharmacy-table-body');
 var modal = document.getElementById('inventory-modal');

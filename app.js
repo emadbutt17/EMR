@@ -1,6 +1,16 @@
 const uuidv4 = require('uuid/v4');
 var PouchDB = require('pouchdb-browser');
 var patientDb = new PouchDB('patients');
+var patientRemoteDb = new PouchDB('http://localhost:5984/patients');
+
+// Replication code
+patientDb.sync(patientRemoteDb, {
+    live: true,
+    retry: true
+})
+.on('error', (err) => {
+    console.log(err);
+});
 
 myButton = document.getElementById('registerButton');
 myButton.onclick = addPatient;
