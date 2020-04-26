@@ -49,6 +49,20 @@ var addPrescription = () => {
     let duration = document.getElementById('durationPrescription').value;
     let instructions = document.getElementById('instructionsPrescription').value;
 
+    if (drug === '') {
+        alert('Ingrese el nombre del medicamento.')
+        return;
+    } else if (dose === '') {
+        alert('Introducir dosis');
+        return;
+    } else if (duration === '') {
+        alert('Ingrese la duración');
+        return;
+    } else if (instructions === '') {
+        alert('Ingrese instrucciones');
+        return;
+    }
+
     let prescription = {
         _id: new Date().toLocaleDateString('en-GB'),
         drug: drug,
