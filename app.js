@@ -30,6 +30,15 @@ function addPatient() {
     spss = document.getElementById('spssRegister').checked;
     indigenous = document.getElementById('indigenousRegister').checked;
     disability = document.getElementById('disabilityRegister').checked;
+
+    if (first === '' || last === '') {
+        alert('Ingrese el nombre del paciente');
+        return;
+    }
+    if (dob === '') {
+        alert('Ingrese la fecha de nacimiento del paciente');
+        return;
+    }
     
     let id = uuidv4();
     let patient = {

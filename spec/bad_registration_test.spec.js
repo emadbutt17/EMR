@@ -12,7 +12,9 @@ const registerButton = driver.findElement(By.id('registerButton'));
 driver.sleep(3000).then(() => {
     registerButton.click().then(() => {
         driver.getCurrentUrl().then((url) => {
-
+            if (url == 'file:///C:/Purdue/EPICS/EMR/src/pages/Registration.html') {
+                
+            }
         });
     })
 })
